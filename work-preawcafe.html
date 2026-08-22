@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>เปรี้ยวคาเฟ่ - ผลงาน รับทำเว็บไซต์ | Prachuap Online</title>
+    <meta name="description" content="ผลงาน รับทำเว็บไซต์: เปรี้ยวคาเฟ่เว็บไซต์ คาเฟ่ พร้อมรายการเมนู และเบเกอรี่ เปิดรับออร์เดอร์ เมนูส่งถึงบ้าน"/>
+    <meta name="keywords" content="รับทำเว็บไซต์, รับทำ landing page, ทำเว็บยิงแอด, ออกแบบเว็บไซต์, รับทำเว็บไซต์ ประจวบ, prachuap online">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prachuap.online/work-preawcafe.html"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prachuap.online/work-preawcafe.html"/>
+    <meta property="og:title" content="เปรี้ยวคาเฟ่ - ผลงาน รับทำเว็บไซต์ | Prachuap Online"/>
+    <meta property="og:description" content="ผลงาน รับทำเว็บไซต์: เปรี้ยวคาเฟ่เว็บไซต์ คาเฟ่ พร้อมรายการเมนู และเบเกอรี่ เปิดรับออร์เดอร์ เมนูส่งถึงบ้าน"/>
+    <meta property="og:image" content="https://prachuap.online/logoprachuap.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://prachuap.online/work-preawcafe.html"/>
+    <meta property="twitter:title" content="เปรี้ยวคาเฟ่ - ผลงาน รับทำเว็บไซต์ | Prachuap Online"/>
+    <meta property="twitter:description" content="ผลงาน รับทำเว็บไซต์: เปรี้ยวคาเฟ่เว็บไซต์ คาเฟ่ พร้อมรายการเมนู และเบเกอรี่ เปิดรับออร์เดอร์ เมนูส่งถึงบ้าน"/>
+    <meta property="twitter:image" content="https://prachuap.online/logoprachuap.webp">
+
+    <!-- JSON-LD Structured Data (Schema Markup) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Prachuap Online",
+      "image": "https://prachuap.online/logoprachuap.webp",
+      "url": "https://prachuap.online/",
+      "telephone": "063-889-0295",
+      "email": "zx1000rr@gmail.com",
+      "priceRange": "฿999 - ฿14,999",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mueang Prachuap Khiri Khan",
+        "addressRegion": "Prachuap Khiri Khan",
+        "addressCountry": "TH"
+      },
+      "description": "บริการรับทำเว็บไซต์ครบวงจร ออกแบบ Landing Page ยิงแอด และพัฒนาเว็บเดิม รองรับระบบ Mobile Responsive และ On-Page SEO เบื้องต้น"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', 'Inter', sans-serif;
+        }
+    
+        /* ===== v63 Smooth Mobile Hamburger Menu ===== */
+        /* Hamburger button: 3-line morph to X */
+        .mh-btn {
+            position: relative;
+            width: 2.25rem;
+            height: 1.25rem;
+            padding: 0;
+        }
+        .mh-btn .mh-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2.5px;
+            border-radius: 999px;
+            background-color: #475569;
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .mh-btn .mh-line:nth-child(1) { top: 0; }
+        .mh-btn .mh-line:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .mh-btn .mh-line:nth-child(3) { bottom: 0; }
+        .mh-btn:hover .mh-line { background-color: #2563eb; box-shadow: 0 0 10px rgba(37,99,235,0.4); }
+        .mh-btn.is-open .mh-line:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+        .mh-btn.is-open .mh-line:nth-child(2) { opacity: 0; transform: translateY(-50%) scaleX(0.4); }
+        .mh-btn.is-open .mh-line:nth-child(3) { bottom: auto; top: 50%; transform: translateY(-50%) rotate(-45deg); }
+        /* Sidebar panel: spring slide-in + glass header */
+                #mobile-menu-panel {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+            box-shadow: -10px 0 40px rgba(15,23,42,0.18);
+            will-change: transform;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch;
+            height: 100vh;
+            max-height: 100vh;
+        }
+        #mobile-menu-panel.translate-x-full { transform: translateX(100%); }
+        #mobile-menu-panel.translate-x-0 { transform: translateX(0); }
+        /* Backdrop: blur + dark */
+        #mobile-backdrop {
+            transition: opacity 0.35s ease, backdrop-filter 0.35s ease;
+        }
+        #mobile-backdrop.opacity-0 { opacity: 0; }
+        #mobile-backdrop.opacity-100 { opacity: 1; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+        /* Menu items: stagger fade + slide */
+        .mobile-nav-link {
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s ease, color 0.2s ease, background-color 0.2s ease, padding-left 0.2s ease;
+            will-change: transform, opacity;
+        }
+        #mobile-menu-panel.translate-x-full .mobile-nav-link { opacity: 0; transform: translateX(14px); }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link { opacity: 1; transform: translateX(0); }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(1)  { transition-delay: 0.06s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(2)  { transition-delay: 0.08s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(3)  { transition-delay: 0.10s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(4)  { transition-delay: 0.12s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(5)  { transition-delay: 0.14s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(6)  { transition-delay: 0.16s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(7)  { transition-delay: 0.18s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(8)  { transition-delay: 0.20s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(9)  { transition-delay: 0.22s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(10) { transition-delay: 0.24s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(11) { transition-delay: 0.26s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(12) { transition-delay: 0.28s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(13) { transition-delay: 0.30s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(14) { transition-delay: 0.32s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(15) { transition-delay: 0.34s; }
+        #mobile-menu-panel.translate-x-0 .mobile-nav-link:nth-child(16) { transition-delay: 0.36s; }
+        /* Header label of sidebar: stagger 0 */
+        #mobile-menu-panel .__mh-head { opacity: 1 !important; transform: none !important; }
+        /* ===== v64 Prepare Checklist Section ===== */
+        .prep-card { position: relative; overflow: hidden; transition: transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s ease, border-color 0.35s ease; }
+        .prep-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(30,64,175,0.18); border-color: #bfdbfe !important; }
+        .prep-card .prep-icon { transition: transform 0.35s cubic-bezier(.4,0,.2,1), background-color 0.35s ease, color 0.35s ease; }
+        .prep-card:hover .prep-icon { transform: scale(1.12) rotate(-6deg); }
+        .prep-card .prep-num { position: absolute; top: -0.6rem; right: 0.4rem; font-family: 'Inter', 'Prompt', sans-serif; font-size: 4.5rem; font-weight: 800; line-height: 1; color: #1e3a8a; opacity: 0.05; transition: opacity 0.35s ease; }
+        .prep-card:hover .prep-num { opacity: 0.10; }
+        .prep-badge { display: inline-flex; align-items: center; gap: 0.35rem; background-color: #eff6ff; color: #1d4ed8; border: 1px solid #dbeafe; font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap; }
+
+        /* Active link slide-in accent bar on hover */
+        .mobile-nav-link:hover { padding-left: 0.5rem; }
+        /* Body scroll lock */
+        body.__mh-locked { overflow: hidden; }
+
+    
+        .mh-btn.is-open ~ * #mobile-close-button i,
+        #mobile-menu-panel.is-open-panel #mobile-close-button i { transform: rotate(180deg); }
+
+        /* ===== v65 Promotional ฿999 Section ===== */
+        @keyframes promoGradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        @keyframes promoShineSweep { 0% { left: -120%; } 100% { left: 120%; } }
+        @keyframes promoPricePulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+        @keyframes promoBadgeBounce { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-6px) rotate(-4deg); } }
+        @keyframes promoGlowRing { 0% { transform: scale(0.85); opacity: 0.7; } 70%,100% { transform: scale(1.25); opacity: 0; } }
+        @keyframes promoSparkle { 0%,100% { opacity: 0.2; transform: scale(0.8); } 50% { opacity: 0.8; transform: scale(1.2); } }
+        @keyframes promoFireStrip { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .promo-wrap { background: linear-gradient(135deg, #0f172a 0%, #172554 35%, #1e3a8a 60%, #1e1b4b 100%); background-size: 300% 300%; animation: promoGradientShift 12s ease infinite; }
+        .promo-fire-strip { background: linear-gradient(90deg, #f59e0b, #ef4444, #f97316, #eab308, #ef4444, #f59e0b); background-size: 300% 100%; animation: promoFireStrip 4s linear infinite; }
+        .promo-fire-strip::after { content: ''; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,0.55), transparent); animation: promoShineSweep 3.5s ease-in-out infinite; }
+        .promo-card-65 { position: relative; border: 2px solid rgba(96,165,250,0.35); animation: promoPricePulse 5s ease-in-out infinite; }
+        .promo-card-65::before { content: ''; position: absolute; inset: -2px; border-radius: inherit; padding: 2px; background: conic-gradient(from 180deg, #3b82f6, #8b5cf6, #f43f5e, #f59e0b, #3b82f6); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.55; animation: promoGradientShift 6s linear infinite; pointer-events: none; }
+        .promo-sparkle { position: absolute; pointer-events: none; animation: promoSparkle 3s ease-in-out infinite; }
+        .promo-price-big { background: linear-gradient(90deg, #1d4ed8, #7c3aed, #db2777, #1d4ed8); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; animation: promoGradientShift 4s ease infinite; filter: drop-shadow(0 2px 4px rgba(124,58,237,0.25)); }
+        .promo-badge-80 { animation: promoBadgeBounce 2.2s ease-in-out infinite; }
+        .promo-cta-btn { position: relative; background: linear-gradient(90deg, #f43f5e, #ec4899, #f59e0b); background-size: 200% 100%; animation: promoGradientShift 3s ease infinite; }
+        .promo-cta-btn::before, .promo-cta-btn::after { content: ''; position: absolute; inset: 0; border-radius: inherit; border: 2px solid rgba(244,63,94,0.55); animation: promoGlowRing 2.4s ease-out infinite; }
+        .promo-cta-btn::after { animation-delay: 1.2s; }
+        .promo-cta-btn:hover { transform: scale(1.03); }
+        .promo-progress-bar { background: linear-gradient(90deg, #f43f5e, #f59e0b, #fbbf24); background-size: 200% 100%; animation: promoGradientShift 3s ease infinite; }
+        .promo-progress-bar::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent, rgba(255,255,255,0.45), transparent); animation: promoShineSweep 2.8s ease-in-out infinite; }
+        .promo-urgency-dot { animation: promoPricePulse 1.4s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+
+   <!-- Floating Contact Buttons (ลอยด้านขวาของจอ) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3.5">
+        <!-- ปุ่ม Line -->
+        <a href="https://line.me/ti/p/~adminkasem" target="_blank" rel="noopener" 
+           class="flex items-center justify-center w-14 h-14 bg-[#06C755] text-white rounded-full shadow-xl hover:bg-[#05b34c] transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
+           title="แชทผ่าน Line">
+            <i class="fa-brands fa-line text-3xl"></i>
+            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
+            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
+                Line: adminkasem
+            </span>
+        </a>
+
+        <!-- ปุ่มโทรศัพท์ -->
+        <a href="tel:0638890295" 
+           class="flex items-center justify-center w-14 h-14 bg-blue-600 text-white rounded-full shadow-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
+           title="โทรหาเรา">
+            <i class="fa-solid fa-phone text-2xl animate-pulse"></i>
+            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
+            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
+                โทร: 063-889-0295
+            </span>
+        </a>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center">
+                        <img src="logoprachuap.webp" alt="Prachuap Online - บริการรับทำเว็บไซต์ครบวงจร" class="h-12 w-auto object-contain py-1">
+                    </a>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-5">
+                    <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">Home</a>
+                    <div class="relative group">
+    <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm flex items-center gap-1">
+        <i class="fa-solid fa-tag text-blue-600/70 text-[11px]"></i>โปรโมชั่น
+        <i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180"></i>
+    </a>
+    <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2 z-50 pointer-events-none group-hover:pointer-events-auto">
+        <a href="promotion.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+            <i class="fa-solid fa-globe text-blue-600 text-lg w-6 text-center"></i>
+            <span>
+                <span class="block text-sm font-semibold text-slate-800">โปรโมชั่นทำเว็บ</span>
+                <span class="block text-[11px] text-slate-500">รับทำเว็บไซต์ 999 / 2,999 / 14,999</span>
+            </span>
+        </a>
+        <a href="data-promotion.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+            <i class="fa-solid fa-chart-pie text-cyan-600 text-lg w-6 text-center"></i>
+            <span>
+                <span class="block text-sm font-semibold text-slate-800">โปรโมชั่น Data</span>
+                <span class="block text-[11px] text-slate-500">Analytics &amp; BI + AI</span>
+            </span>
+        </a>
+        <a href="erp-promotion.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+            <i class="fa-solid fa-diagram-project text-emerald-600 text-lg w-6 text-center"></i>
+            <span>
+                <span class="block text-sm font-semibold text-slate-800">โปรโมชั่น ERP</span>
+                <span class="block text-[11px] text-slate-500">ระบบจัดการองค์กร</span>
+            </span>
+        </a>
+    </div>
+</div>
+                    <a href="999.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">แพ็กเกจ 999</a>
+                    <a href="2999.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">แพ็กเกจ 2,999</a>
+                    <a href="14999.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">แพ็กเกจ 14,999</a>
+                    <a href="ai.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm"><i class="fa-solid fa-robot mr-1.5"></i>AI Agent</a>
+                    <a <div class="relative group">
+                            <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm flex items-center gap-1"><i class="fa-solid fa-layer-group text-blue-600/70 text-[11px]"></i>บริการอื่<i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180"></i></a>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2 z-50">
+                                <a href="cms.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-code text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">รับพัฒนาเว็บเดิม</span>
+                                </a>
+                                <a href="WordPress.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-brands fa-wordpress text-blue-600 text-lg w-6 text-center"></i>
+                                    <span>
+                                        <span class="block text-sm font-semibold text-slate-800">รับทำเว็บไซต์ WordPress</span>
+                                        <span class="block text-[11px] text-slate-500">ครบ 13 หมวดธุรกิจ รองรับ SEO</span>
+                                    </span>
+                                </a>
+                                <a href="wordpress-portfolio.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-images text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">Demo WordPress</span>
+                                </a>
+                                <a href="analytics.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-chart-pie text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">Data Analytics &amp; BI</span>
+                                </a>
+                                <a href="management-systems-demo.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-diagram-project text-blue-600 text-lg w-6 text-center"></i>
+                                    <span>
+                                        <span class="block text-sm font-semibold text-slate-800">ระบบจัดการองค์กร</span>
+                                        <span class="block text-[11px] text-slate-500">ERP CRM HRM CSRM WMS</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ราคา ชื่อเว็บ</a>
+                    <a href="category.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">ตัวอย่างเว็บ</a>
+                    <a href="14999.html#portfolio" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm"><i class="fa-solid fa-briefcase mr-1.5"></i>ผลงาน</a>
+                    <a href="cms.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">รับพัฒนาเว็บเดิม</a>
+                    <a href="WordPress.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">รับทำเว็บไซต์ WordPress</a>
+                        <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm">เกี่ยวกับเรา</a>
+                    
+                    <a href="14999.html#contact" class="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
+                        <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                    </a>
+                </div>
+
+                <div class="flex items-center lg:hidden">
+                                       <div class="relative group">
+                            <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm flex items-center gap-1"><i class="fa-solid fa-layer-group text-blue-600/70 text-[11px]"></i>บริการอื่<i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180"></i></a>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2 z-50">
+                                <a href="cms.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-code text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">รับพัฒนาเว็บเดิม</span>
+                                </a>
+                                <a href="WordPress.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-brands fa-wordpress text-blue-600 text-lg w-6 text-center"></i>
+                                    <span>
+                                        <span class="block text-sm font-semibold text-slate-800">รับทำเว็บไซต์ WordPress</span>
+                                        <span class="block text-[11px] text-slate-500">ครบ 13 หมวดธุรกิจ รองรับ SEO</span>
+                                    </span>
+                                </a>
+                                <a href="wordpress-portfolio.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-images text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">Demo WordPress</span>
+                                </a>
+                                <a href="analytics.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-chart-pie text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">Data Analytics &amp; BI</span>
+                                </a>
+                                <a href="management-systems-demo.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-diagram-project text-blue-600 text-lg w-6 text-center"></i>
+                                    <span>
+                                        <span class="block text-sm font-semibold text-slate-800">ระบบจัดการองค์กร</span>
+                                        <span class="block text-[11px] text-slate-500">ERP CRM HRM CSRM WMS</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-tag text-blue-600/70 mr-2"></i>โปรโมชั่นทำเว็บ</a>
+                <a href="data-promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-chart-pie text-cyan-600 mr-2"></i>โปรโมชั่น Data</a>
+                <a href="erp-promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-diagram-project text-emerald-600 mr-2"></i>โปรโมชั่น ERP</a>
+                <a href="999.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-fire mr-2"></i>แพ็กเกจ 999</a>
+                <a href="2999.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-star mr-2"></i>แพ็กเกจ 2,999</a>
+                <a href="14999.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-crown mr-2"></i>แพ็กเกจ 14,999</a>
+                <a href="ai.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-robot mr-2"></i>AI Agent</a>
+                <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">บริการอื่นๆ</a>
+                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ราคา ชื่อเว็บ</a>
+                <a href="category.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ตัวอย่างเว็บ</a>
+                <a href="14999.html#portfolio" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-briefcase mr-2"></i>ผลงาน</a>
+                <a href="cms.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">รับพัฒนาเว็บเดิม</a>
+                <a href="WordPress.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">รับทำเว็บไซต์ WordPress</a>
+                <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">เกี่ยวกับเรา</a>
+                
+                <a href="14999.html#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
+                    <i class="fa-solid fa-comments"></i> ติดต่อเรา
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area for SEO Optimization -->
+<main class="pt-24 pb-16">
+<!-- Hero Banner -->
+<section class="relative">
+  <img src="images_webp/preawcafe/banner.webp" alt="เปรี้ยวคาเฟ่" class="w-full h-80 md:h-96 object-cover"/>
+  <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/30"></div>
+  <div class="absolute bottom-0 left-0 right-0 px-6 md:px-16 pb-8">
+    <span class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full mb-3"><i class="fa-solid fa-briefcase"></i>คาเฟ่ และเบเกอรี่</span>
+    <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">เปรี้ยวคาเฟ่</h1>
+    <p class="text-slate-300 text-base md:text-lg max-w-2xl">เว็บไซต์ คาเฟ่ พร้อมรายการเมนู และเบเกอรี่ เปิดรับออร์เดอร์ เมนูส่งถึงบ้าน</p>
+  </div>
+</section>
+
+<!-- Project Overview: Problem / Solution / Result -->
+<section class="max-w-6xl mx-auto px-6 md:px-16 py-12">
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/40 transition"><div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4"><i class="fa-solid fa-solid fa-face-sad-tear text-white text-xl"></i></div><h3 class="text-lg font-semibold text-white mb-2">ปัญหา</h3><p class="text-slate-400 text-sm leading-relaxed">คาเฟ่และเบเกอรี่ยังประกาศเมนูผ่านโพสต์ โซเชียล ลูกค้าหาเมนูทั้งหมดไม่ได้ อยากรู้ราคาหรือจองไม่สะดวก</p></div>
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/40 transition"><div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4"><i class="fa-solid fa-solid fa-wand-magic-sparkles text-white text-xl"></i></div><h3 class="text-lg font-semibold text-white mb-2">วิธีแก้</h3><p class="text-slate-400 text-sm leading-relaxed">ออกแบบเว็บไซต์ พร้อมรายการเมนูครบครัน ภาพสินค้าสวยงาม ดีไซน์ เข้ากับ ธีม ของแบรนด์ เปิดรับออร์เดอร์ ได้ทันที</p></div>
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/40 transition"><div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-4"><i class="fa-solid fa-solid fa-arrow-trend-up text-white text-xl"></i></div><h3 class="text-lg font-semibold text-white mb-2">ผลลัพธ์</h3><p class="text-slate-400 text-sm leading-relaxed">ลูกค้าดูรายการได้ทุกเมนูทุกเวลา ติดต่อได้เลย เพิ่มความน่าเชื่อถือของแบรนด์</p></div>
+  </div>
+</section>
+
+<!-- Project Gallery -->
+<section class="max-w-6xl mx-auto px-6 md:px-16 pb-12">
+  <div class="flex items-center gap-3 mb-6"><i class="fa-solid fa-images text-amber-400"></i><h2 class="text-2xl font-bold text-white">ภาพ ประกอบ ผลงาน</h2></div>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="overflow-hidden rounded-xl"><img src="images_webp/preawcafe/banner.webp" alt="เปรี้ยวคาเฟ่" loading="lazy" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110"/></div>
+    <div class="overflow-hidden rounded-xl"><img src="images_webp/preawcafe/thaitea.webp" alt="เปรี้ยวคาเฟ่" loading="lazy" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110"/></div>
+    <div class="overflow-hidden rounded-xl"><img src="images_webp/preawcafe/vanilalate.webp" alt="เปรี้ยวคาเฟ่" loading="lazy" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110"/></div>
+    <div class="overflow-hidden rounded-xl"><img src="images_webp/preawcafe/peachtea.webp" alt="เปรี้ยวคาเฟ่" loading="lazy" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110"/></div>
+    <div class="overflow-hidden rounded-xl"><img src="images_webp/preawcafe/olieng.webp" alt="เปรี้ยวคาเฟ่" loading="lazy" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110"/></div>
+    <div class="overflow-hidden rounded-xl"><img src="images_webp/preawcafe/late.webp" alt="เปรี้ยวคาเฟ่" loading="lazy" class="w-full h-56 object-cover transition-transform duration-500 hover:scale-110"/></div>
+  </div>
+</section>
+
+<!-- Features / Tech -->
+<section class="max-w-6xl mx-auto px-6 md:px-16 pb-12">
+  <div class="flex items-center gap-3 mb-6"><i class="fa-solid fa-list-check text-amber-400"></i><h2 class="text-2xl font-bold text-white">สเปค ของ เว็บไซต์ ที่ได้รับ</h2></div>
+  <div class="grid md:grid-cols-2 gap-4 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 md:p-8">
+    <div class="flex items-start gap-3"><div class="w-8 h-8 shrink-0 rounded-lg bg-emerald-500/10 flex items-center justify-center mt-0.5"><i class="fa-solid fa-check text-emerald-400"></i></div><p class="text-slate-300 text-sm">ระบบ นำเสนอ เมนู และเบเกอรี่</p></div>
+    <div class="flex items-start gap-3"><div class="w-8 h-8 shrink-0 rounded-lg bg-emerald-500/10 flex items-center justify-center mt-0.5"><i class="fa-solid fa-check text-emerald-400"></i></div><p class="text-slate-300 text-sm">รองรับการแสดงผลบนมือถือ</p></div>
+    <div class="flex items-start gap-3"><div class="w-8 h-8 shrink-0 rounded-lg bg-emerald-500/10 flex items-center justify<div class="relative group">
+                            <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm flex items-center gap-1"><i class="fa-solid fa-layer-group text-blue-600/70 text-[11px]"></i>บริการอื่<i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180"></i></a>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2 z-50">
+                                <a href="cms.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-code text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">รับพัฒนาเว็บเดิม</span>
+                                </a>
+                                <a href="WordPress.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-brands fa-wordpress text-blue-600 text-lg w-6 text-center"></i>
+                                    <span>
+                                        <span class="block text-sm font-semibold text-slate-800">รับทำเว็บไซต์ WordPress</span>
+                                        <span class="block text-[11px] text-slate-500">ครบ 13 หมวดธุรกิจ รองรับ SEO</span>
+                                    </span>
+                                </a>
+                                <a href="wordpress-portfolio.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-images text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">Demo WordPress</span>
+                                </a>
+                                <a href="analytics.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-chart-pie text-blue-600 text-lg w-6 text-center"></i>
+                                    <span class="block text-sm font-semibold text-slate-800">Data Analytics &amp; BI</span>
+                                </a>
+                                <a href="management-systems-demo.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
+                                    <i class="fa-solid fa-diagram-project text-blue-600 text-lg w-6 text-center"></i>
+                                    <span>
+                                        <span class="block text-sm font-semibold text-slate-800">ระบบจัดการองค์กร</span>
+                                        <span class="block text-[11px] text-slate-500">ERP CRM HRM CSRM WMS</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+  </div>
+</section>
+
+<!-- CTA: Want a website like this -->
+<section class="max-w-6xl mx-auto px-6 md:px-16 pb-8">
+  <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 md:p-10 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">สนใจ เว็บไซต์ แบบนี้ ไหม</h2>
+    <p class="text-slate-400 text-sm mb-6 max-w-xl mx-auto">รับ คำปรึกษา ฟรี ไม่มีค่าใช้จ่าย ก่อนตัดสินใจ</p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href="https://line.me/ti/p/~adminkasem" target="_blank" class="inline-flex items-center gap-2 bg-[#06C755] text-white font-semibold px-6 py-3 rounded-full hover:opacity-90 transition"><i class="fa-brands fa-line text-xl"></i>กด แอดไลน์</a>
+      <a href="tel:0638890295" class="inline-flex items-center gap-2 border border-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-full hover:border-amber-500 transition"><i class="fa-solid fa-phone"></i>063-889-0295</a>
+      <a href="mailto:zx1000rr@gmail.com" class="inline-flex items-center gap-2 border border-slate-700 text-slate-200 font-semibold px-6 py-3 rounded-full hover:border-amber-500 transition"><i class="fa-solid fa-envelope"></i>zx1000rr@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- Back to packages -->
+<section class="max-w-6xl mx-auto px-6 md:px-16 py-4">
+  <div class="flex justify-center">
+    <a href="14999.html#portfolio" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition text-sm font-medium"><i class="fa-solid fa-arrow-left"></i>กลับไป ดูผลงาน อื่น ๆ</a>
+  </div>
+</section>
+</main>
+<!-- Footer Section -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-code text-blue-500 text-2xl"></i>
+                        <span class="text-2xl font-bold text-white tracking-wide">prachuap online</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-slate-400">
+                        บริการรับทำเว็บไซต์ครบวงจร ออกแบบสวยงาม รองรับมือถือ 
+                        และพัฒนาระบบตามความต้องการในราคาที่จับต้องได้
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">เมนูเว็บไซต์</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="flex flex-col space-y-2.5">
+                            <a href="index.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> Home</a>
+                            <a href="promotion.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> โปรโมชั่น</a>
+                            <a href="service.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> บริการอื่นๆ</a>
+                            <a href="domain.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ราคา ชื่อเว็บ</a>
+                        </div>
+                        <div class="flex flex-col space-y-2.5">
+                            <a href="category.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ตัวอย่างเว็บ</a>
+                            <a href="cms.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> รับพัฒนาเว็บเดิม</a>
+                            <a href="999.html" class="text-slate-400 hover:text-white transition duration-200 text-sm">แพ็กเกจ 999</a>
+                            <a href="14999.html" class="text-white font-semibold text-sm">แพ็กเกจ 14,999</a>
+                            <a href="ai.html" class="text-slate-400 hover:text-white transition duration-200 text-sm">AI Agent</a>
+                            <a href="about.html" class="text-slate-400 hover:text-white transition duration-200 text-sm">เกี่ยวกับเรา</a>
+                            <a href="WordPress.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> รับทำเว็บไซต์ WordPress</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 text-sm">
+                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">ติดต่อเรา</h3>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-500 w-4"></i> 063-889-0295</p>
+                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-500 w-4"></i> zx1000rr@gmail.com</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500">&copy; 2026 prachuap online Studio. All rights reserved.</p>
+                <div class="flex gap-4 text-slate-500 text-lg">
+                    <a href="#" class="hover:text-white transition" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-white transition" aria-label="Line"><i class="fa-brands fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Open/Close Menu -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const closeButton = document.getElementById('mobile-close-button');
+        const sidebar = document.getElementById('mobile-sidebar');
+        const backdrop = document.getElementById('mobile-backdrop');
+        const menuPanel = document.getElementById('mobile-menu-panel');
+        const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMenu() {
+            sidebar.classList.remove('hidden');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                backdrop.classList.add('opacity-100');
+                menuPanel.classList.remove('translate-x-full');
+                menuPanel.classList.add('translate-x-0');
+            }, 10);
+        }
+
+        function closeMenu() {
+            backdrop.classList.remove('opacity-100');
+            backdrop.classList.add('opacity-0');
+            menuPanel.classList.remove('translate-x-0');
+            menuPanel.classList.add('translate-x-full');
+            
+            setTimeout(() => {
+                sidebar.classList.add('hidden');
+            }, 300);
+        }
+
+        menuButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+
+</body>
+</html>
