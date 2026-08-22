@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>prachuap - รับทำเว็บไซต์ครบวงจร</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome สำหรับ Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Prompt -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   prachuap - รับทำเว็บไซต์ครบวงจร
+  </title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <!-- Font Awesome สำหรับ Icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts: Prompt -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
             font-family: 'Prompt', sans-serif;
         }
         /* Smooth scrolling */
@@ -109,502 +112,823 @@
     
         .mh-btn.is-open ~ * #mobile-close-button i,
         #mobile-menu-panel.is-open-panel #mobile-close-button i { transform: rotate(180deg); }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-800 antialiased">
-<!-- Floating Contact Buttons (ลอยด้านขวาของจอ) -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3.5">
-        <!-- ปุ่ม Line -->
-        <a href="https://line.me/ti/p/~adminkasem" target="_blank" rel="noopener" 
-           class="flex items-center justify-center w-14 h-14 bg-[#06C755] text-white rounded-full shadow-xl hover:bg-[#05b34c] transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
-           title="แชทผ่าน Line">
-            <i class="fa-brands fa-line text-3xl"></i>
-            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
-            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
-                Line: adminkasem
-            </span>
+  </style>
+ </head>
+ <body class="bg-slate-50 text-slate-800 antialiased">
+  <!-- Floating Contact Buttons (ลอยด้านขวาของจอ) -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3.5">
+   <!-- ปุ่ม Line -->
+   <a class="flex items-center justify-center w-14 h-14 bg-[#06C755] text-white rounded-full shadow-xl hover:bg-[#05b34c] transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative" href="https://line.me/ti/p/~adminkasem" rel="noopener" target="_blank" title="แชทผ่าน Line">
+    <i class="fa-brands fa-line text-3xl">
+    </i>
+    <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
+    <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
+     Line: adminkasem
+    </span>
+   </a>
+   <!-- ปุ่มโทรศัพท์ -->
+   <a class="flex items-center justify-center w-14 h-14 bg-blue-600 text-white rounded-full shadow-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative" href="tel:0638890295" title="โทรหาเรา">
+    <i class="fa-solid fa-phone text-2xl animate-pulse">
+    </i>
+    <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
+    <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
+     โทร: 063-889-0295
+    </span>
+   </a>
+  </div>
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20">
+     <div class="flex items-center">
+      <a class="flex-shrink-0 flex items-center" href="index.html">
+       <img alt="Prachuap Online Logo" class="h-12 w-auto object-contain py-1" src="logoprachuap.webp"/>
+      </a>
+     </div>
+     <!-- Desktop Menu (แก้ไข Breakpoint เป็น xl: เพื่อรองรับเมนูที่เยอะขึ้นไม่ให้เบียดกัน) -->
+     <div class="hidden lg:flex items-center space-x-5">
+      <a class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm" href="index.html">
+       <i class="fa-solid fa-house text-blue-600/70 text-[11px]">
+       </i>
+       Home
+      </a>
+      <div class="relative group">
+       <a class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm flex items-center gap-1" href="promotion.html">
+        <i class="fa-solid fa-tag text-blue-600/70 text-[11px]">
+        </i>
+        โปรโมชั่น
+        <i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180">
+        </i>
+       </a>
+       <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 delay-75 p-2 z-50 pointer-events-none group-hover:pointer-events-auto">
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left" href="promotion.html">
+         <i class="fa-solid fa-globe text-blue-600 text-lg w-6 text-center">
+         </i>
+         <span>
+          <span class="block text-sm font-semibold text-slate-800">
+           โปรโมชั่นทำเว็บ
+          </span>
+          <span class="block text-[11px] text-slate-500">
+           รับทำเว็บไซต์ 999 / 2,999 / 14,999
+          </span>
+         </span>
         </a>
-
-        <!-- ปุ่มโทรศัพท์ -->
-        <a href="tel:0638890295" 
-           class="flex items-center justify-center w-14 h-14 bg-blue-600 text-white rounded-full shadow-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group relative"
-           title="โทรหาเรา">
-            <i class="fa-solid fa-phone text-2xl animate-pulse"></i>
-            <!-- ข้อความ Tooltip แสดงเมื่อเอาเมาส์ชี้ (แสดงเฉพาะบนจอคอม) -->
-            <span class="absolute right-16 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-md border border-slate-700">
-                โทร: 063-889-0295
-            </span>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left" href="data-promotion.html">
+         <i class="fa-solid fa-chart-pie text-cyan-600 text-lg w-6 text-center">
+         </i>
+         <span>
+          <span class="block text-sm font-semibold text-slate-800">
+           โปรโมชั่น Data
+          </span>
+          <span class="block text-[11px] text-slate-500">
+           Analytics &amp; BI + AI
+          </span>
+         </span>
         </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left" href="erp-promotion.html">
+         <i class="fa-solid fa-diagram-project text-emerald-600 text-lg w-6 text-center">
+         </i>
+         <span>
+          <span class="block text-sm font-semibold text-slate-800">
+           โปรโมชั่น ERP
+          </span>
+          <span class="block text-[11px] text-slate-500">
+           ระบบจัดการองค์กร
+          </span>
+         </span>
+        </a>
+       </div>
+      </div>
+      <div class="relative group">
+       <a class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm flex items-center gap-1" href="service.html">
+        <i class="fa-solid fa-layer-group text-blue-600/70 text-[11px]">
+        </i>
+        บริการอื่นๆ
+        <i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180">
+        </i>
+       </a>
+       <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 delay-75 p-2 z-50">
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left" href="cms.html">
+         <i class="fa-solid fa-code text-blue-600 text-lg w-6 text-center">
+         </i>
+         <span class="block text-sm font-semibold text-slate-800">
+          รับพัฒนาเว็บเดิม
+         </span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left" href="WordPress.html">
+         <i class="fa-brands fa-wordpress text-blue-600 text-lg w-6 text-center">
+         </i>
+         <span>
+          <span class="block text-sm font-semibold text-slate-800">
+           รับทำเว็บไซต์ WordPress
+          </span>
+          <span class="block text-[11px] text-slate-500">
+           ครบ 13 หมวดธุรกิจ รองรับ SEO
+          </span>
+         </span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left" href="wordpress-portfolio.html">
+         <i class="fa-solid fa-images text-blue-600 text-lg w-6 text-center">
+         </i>
+         <span class="block text-sm font-semibold text-slate-800">
+          Demo WordPress
+         </span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left" href="analytics.html">
+         <i class="fa-solid fa-chart-pie text-blue-600 text-lg w-6 text-center">
+         </i>
+         <span class="block text-sm font-semibold text-slate-800">
+          Data Analytics &amp; BI
+         </span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left" href="management-systems-demo.html">
+         <i class="fa-solid fa-diagram-project text-blue-600 text-lg w-6 text-center">
+         </i>
+         <span>
+          <span class="block text-sm font-semibold text-slate-800">
+           ระบบจัดการองค์กร
+          </span>
+          <span class="block text-[11px] text-slate-500">
+           ERP CRM HRM CSRM WMS
+          </span>
+         </span>
+        </a>
+        <div class="border-t border-slate-100 my-1">
+        </div>
+        <div class="px-3 py-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+         ระบบจัดการองค์กร
+        </div>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left" href="ERP.html">
+         <i class="fa-solid fa-diagram-project text-blue-600 text-sm w-6 text-center">
+         </i>
+         <span class="block text-sm text-slate-700">
+          ERP ระบบวางแผนทรัพยากรองค์กร
+         </span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left" href="CRM.html">
+         <i class="fa-solid fa-handshake text-blue-600 text-sm w-6 text-center">
+         </i>
+         <span class="block text-sm text-slate-700">
+          CRM บริหารความสัมพันธ์ลูกค้า
+         </span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left" href="HRM.html">
+         <i class="fa-solid fa-user-group text-blue-600 text-sm w-6 text-center">
+         </i>
+         <span class="block text-sm text-slate-700">
+          HRM จัดการบุคลากรและเงินเดือน
+         </span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left" href="CSRM.html">
+         <i class="fa-solid fa-headset text-blue-600 text-sm w-6 text-center">
+         </i>
+         <span class="block text-sm text-slate-700">
+          CSRM บริการหลังการขาย
+         </span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left" href="WMS.html">
+         <i class="fa-solid fa-warehouse text-blue-600 text-sm w-6 text-center">
+         </i>
+         <span class="block text-sm text-slate-700">
+          WMS จัดการคลังสินค้าและสต็อก
+         </span>
+        </a>
+       </div>
+      </div>
+      <a class="text-blue-600 font-semibold transition duration-200 text-sm flex items-center gap-1.5" href="ai.html">
+       <i class="fa-solid fa-robot text-base">
+       </i>
+       AI Agent
+      </a>
+      <a class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm" href="domain.html">
+       <i class="fa-solid fa-globe text-blue-600/70 text-[11px]">
+       </i>
+       ราคา ชื่อเว็บ
+      </a>
+      <a class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5" href="14999.html">
+       <i class="fa-solid fa-chevron-right text-[10px] text-slate-600">
+       </i>
+       แพ็กเกจ 14,999
+      </a>
+      <a class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm" href="category.html">
+       <i class="fa-solid fa-desktop text-blue-600/70 text-[11px]">
+       </i>
+       ตัวอย่างเว็บ
+      </a>
+      <a class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm" href="about.html">
+       <i class="fa-solid fa-circle-info text-blue-600/70 text-[11px]">
+       </i>
+       เกี่ยวกับเรา
+      </a>
+      <a class="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2" href="#contact">
+       <i class="fa-solid fa-comments">
+       </i>
+       ติดต่อเรา
+      </a>
+     </div>
+     <!-- Mobile Menu Button -->
+     <div class="flex items-center lg:hidden">
+      <button aria-label="เปิดเมนูนำทาง" class="mh-btn focus:outline-none focus:ring-2 focus:ring-blue-400/60 rounded-lg" id="mobile-menu-button">
+       <span class="mh-line">
+       </span>
+       <span class="mh-line">
+       </span>
+       <span class="mh-line">
+       </span>
+      </button>
+     </div>
     </div>
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                
-                <div class="flex items-center">
-                    <a href="index.html" class="flex-shrink-0 flex items-center">
-                        <img src="logoprachuap.webp" alt="Prachuap Online Logo" class="h-12 w-auto object-contain py-1">
-                    </a>
-                </div>
-
-                <!-- Desktop Menu (แก้ไข Breakpoint เป็น xl: เพื่อรองรับเมนูที่เยอะขึ้นไม่ให้เบียดกัน) -->
-                    <div class="hidden lg:flex items-center space-x-5">
-                        <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm"><i class="fa-solid fa-house text-blue-600/70 text-[11px]"></i>Home</a>
-                        <div class="relative group">
-    <a href="promotion.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm flex items-center gap-1">
-        <i class="fa-solid fa-tag text-blue-600/70 text-[11px]"></i>โปรโมชั่น
-        <i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180"></i>
+   </div>
+  </nav>
+  <!-- Mobile Sidebar Menu (แก้ไข: ใส่ hidden เป็นค่าเริ่มต้น เพื่อไม่ให้แผงลอยไปทับเมนูหลัก) -->
+  <div class="fixed inset-0 z-50 overflow-hidden hidden transition-all duration-300" id="mobile-sidebar">
+   <!-- Backdrop พื้นหลังสีดำโปร่งแสง -->
+   <div class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300" id="mobile-backdrop">
+   </div>
+   <!-- แผงเมนูสไลด์ -->
+   <div class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out" id="mobile-menu-panel">
+    <!-- ปุ่มปิดเมนู -->
+    <div class="__mh-head flex items-center justify-between mb-8">
+     <span class="font-bold text-lg text-slate-900">
+      <i class="fa-solid fa-bars text-blue-600 mr-2">
+      </i>
+      เมนูนำทาง
+     </span>
+     <button aria-label="ปิดเมนู" class="text-slate-400 hover:text-blue-600 text-xl p-2 rounded-full hover:bg-slate-100 transition" id="mobile-close-button">
+      <i class="fa-solid fa-xmark transition-transform duration-300">
+      </i>
+     </button>
+    </div>
+    <!-- รายการลิงก์เมนูสำหรับมือถือ -->
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="index.html">
+     <i class="fa-solid fa-house text-blue-600/70 text-sm mr-1">
+     </i>
+     Home
     </a>
-    <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2 z-50 pointer-events-none group-hover:pointer-events-auto">
-        <a href="promotion.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
-            <i class="fa-solid fa-globe text-blue-600 text-lg w-6 text-center"></i>
-            <span>
-                <span class="block text-sm font-semibold text-slate-800">โปรโมชั่นทำเว็บ</span>
-                <span class="block text-[11px] text-slate-500">รับทำเว็บไซต์ 999 / 2,999 / 14,999</span>
-            </span>
-        </a>
-        <a href="data-promotion.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
-            <i class="fa-solid fa-chart-pie text-cyan-600 text-lg w-6 text-center"></i>
-            <span>
-                <span class="block text-sm font-semibold text-slate-800">โปรโมชั่น Data</span>
-                <span class="block text-[11px] text-slate-500">Analytics &amp; BI + AI</span>
-            </span>
-        </a>
-        <a href="erp-promotion.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
-            <i class="fa-solid fa-diagram-project text-emerald-600 text-lg w-6 text-center"></i>
-            <span>
-                <span class="block text-sm font-semibold text-slate-800">โปรโมชั่น ERP</span>
-                <span class="block text-[11px] text-slate-500">ระบบจัดการองค์กร</span>
-            </span>
-        </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="promotion.html">
+     <i class="fa-solid fa-tag text-blue-600/70 mr-2">
+     </i>
+     โปรโมชั่นทำเว็บ
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="data-promotion.html">
+     <i class="fa-solid fa-chart-pie text-cyan-600 mr-2">
+     </i>
+     โปรโมชั่น Data
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="erp-promotion.html">
+     <i class="fa-solid fa-diagram-project text-emerald-600 mr-2">
+     </i>
+     โปรโมชั่น ERP
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="service.html">
+     <i class="fa-solid fa-layer-group mr-1">
+     </i>
+     บริการอื่นๆ
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="cms.html">
+     <i class="fa-solid fa-code mr-1">
+     </i>
+     รับพัฒนาเว็บเดิม
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="WordPress.html">
+     <i class="fa-brands fa-wordpress mr-1">
+     </i>
+     รับทำเว็บไซต์ WordPress
+    </a>
+    <a class="mobile-nav-link text-blue-600 font-bold py-2 border-b border-slate-100 text-base" href="wordpress-portfolio.html">
+     <i class="fa-solid fa-images mr-1">
+     </i>
+     Demo WordPress
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="analytics.html">
+     <i class="fa-solid fa-chart-pie mr-1">
+     </i>
+     Data Analytics &amp; BI
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="management-systems-demo.html">
+     <i class="fa-solid fa-diagram-project mr-1">
+     </i>
+     ระบบจัดการองค์กร
+    </a>
+    <a class="mobile-nav-link text-blue-600 font-bold py-2 border-b border-slate-100 text-base" href="ai.html">
+     <i class="fa-solid fa-robot mr-1">
+     </i>
+     AI Agent
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="domain.html">
+     <i class="fa-solid fa-globe text-blue-600/70 text-sm mr-1">
+     </i>
+     ราคา ชื่อเว็บ
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="category.html">
+     <i class="fa-solid fa-desktop text-blue-600/70 text-sm mr-1">
+     </i>
+     ตัวอย่างเว็บ
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="about.html">
+     <i class="fa-solid fa-circle-info text-blue-600/70 text-sm mr-1">
+     </i>
+     เกี่ยวกับเรา
+    </a>
+    <div class="pt-2 text-xs font-bold text-slate-400 uppercase tracking-wider">
+     ระบบจัดการองค์กร
     </div>
-</div>
-                        <div class="relative group">
-                            <a href="service.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm flex items-center gap-1"><i class="fa-solid fa-layer-group text-blue-600/70 text-[11px]"></i>บริการอื่นๆ<i class="fa-solid fa-chevron-down text-[9px] transition-transform group-hover:rotate-180"></i></a>
-                            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2 z-50">
-                                <a href="cms.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-code text-blue-600 text-lg w-6 text-center"></i>
-                                    <span class="block text-sm font-semibold text-slate-800">รับพัฒนาเว็บเดิม</span>
-                                </a>
-                                <a href="WordPress.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-brands fa-wordpress text-blue-600 text-lg w-6 text-center"></i>
-                                    <span>
-                                        <span class="block text-sm font-semibold text-slate-800">รับทำเว็บไซต์ WordPress</span>
-                                        <span class="block text-[11px] text-slate-500">ครบ 13 หมวดธุรกิจ รองรับ SEO</span>
-                                    </span>
-                                </a>
-                                <a href="wordpress-portfolio.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-images text-blue-600 text-lg w-6 text-center"></i>
-                                    <span class="block text-sm font-semibold text-slate-800">Demo WordPress</span>
-                                </a>
-                                <a href="analytics.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-chart-pie text-blue-600 text-lg w-6 text-center"></i>
-                                    <span class="block text-sm font-semibold text-slate-800">Data Analytics &amp; BI</span>
-                                </a>
-                                <a href="management-systems-demo.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-diagram-project text-blue-600 text-lg w-6 text-center"></i>
-                                    <span>
-                                        <span class="block text-sm font-semibold text-slate-800">ระบบจัดการองค์กร</span>
-                                        <span class="block text-[11px] text-slate-500">ERP CRM HRM CSRM WMS</span>
-                                    </span>
-                                </a>
-                                <div class="border-t border-slate-100 my-1"></div>
-                                <div class="px-3 py-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider">ระบบจัดการองค์กร</div>
-                                <a href="ERP.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-diagram-project text-blue-600 text-sm w-6 text-center"></i>
-                                    <span class="block text-sm text-slate-700">ERP ระบบวางแผนทรัพยากรองค์กร</span>
-                                </a>
-                                <a href="CRM.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-handshake text-blue-600 text-sm w-6 text-center"></i>
-                                    <span class="block text-sm text-slate-700">CRM บริหารความสัมพันธ์ลูกค้า</span>
-                                </a>
-                                <a href="HRM.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-user-group text-blue-600 text-sm w-6 text-center"></i>
-                                    <span class="block text-sm text-slate-700">HRM จัดการบุคลากรและเงินเดือน</span>
-                                </a>
-                                <a href="CSRM.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-headset text-blue-600 text-sm w-6 text-center"></i>
-                                    <span class="block text-sm text-slate-700">CSRM บริการหลังการขาย</span>
-                                </a>
-                                <a href="WMS.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors text-left">
-                                    <i class="fa-solid fa-warehouse text-blue-600 text-sm w-6 text-center"></i>
-                                    <span class="block text-sm text-slate-700">WMS จัดการคลังสินค้าและสต็อก</span>
-                                </a>
-                            </div>
-                        </div>
-        <a href="ai.html" class="text-blue-600 font-semibold transition duration-200 text-sm flex items-center gap-1.5"><i class="fa-solid fa-robot text-base"></i>AI Agent</a>
-
-                        <a href="domain.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm"><i class="fa-solid fa-globe text-blue-600/70 text-[11px]"></i>ราคา ชื่อเว็บ</a>
-                            <a href="14999.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> แพ็กเกจ 14,999</a>
-                        <a href="category.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm"><i class="fa-solid fa-desktop text-blue-600/70 text-[11px]"></i>ตัวอย่างเว็บ</a>
-                        <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition duration-200 text-sm"><i class="fa-solid fa-circle-info text-blue-600/70 text-[11px]"></i>เกี่ยวกับเรา</a>
-                        <a href="#contact" class="bg-blue-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center gap-2">
-                            <i class="fa-solid fa-comments"></i> ติดต่อเรา
-                        </a>
-                    </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="flex items-center lg:hidden">
-                                        <button id="mobile-menu-button" class="mh-btn focus:outline-none focus:ring-2 focus:ring-blue-400/60 rounded-lg" aria-label="เปิดเมนูนำทาง">
-                        <span class="mh-line"></span>
-                        <span class="mh-line"></span>
-                        <span class="mh-line"></span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Sidebar Menu (แก้ไข: ใส่ hidden เป็นค่าเริ่มต้น เพื่อไม่ให้แผงลอยไปทับเมนูหลัก) -->
-    <div id="mobile-sidebar" class="fixed inset-0 z-50 overflow-hidden hidden transition-all duration-300">
-        <!-- Backdrop พื้นหลังสีดำโปร่งแสง -->
-        <div id="mobile-backdrop" class="absolute inset-0 bg-slate-900/50 opacity-0 transition-opacity duration-300"></div>
-        
-        <!-- แผงเมนูสไลด์ -->
-        <div id="mobile-menu-panel" class="absolute inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl flex flex-col p-6 translate-x-full transition-transform duration-300 ease-in-out">
-            <!-- ปุ่มปิดเมนู -->
-                        <div class="__mh-head flex items-center justify-between mb-8">
-                <span class="font-bold text-lg text-slate-900"><i class="fa-solid fa-bars text-blue-600 mr-2"></i>เมนูนำทาง</span>
-                <button id="mobile-close-button" class="text-slate-400 hover:text-blue-600 text-xl p-2 rounded-full hover:bg-slate-100 transition" aria-label="ปิดเมนู">
-                    <i class="fa-solid fa-xmark transition-transform duration-300"></i>
-                </button>
-            </div>
-            
-            <!-- รายการลิงก์เมนูสำหรับมือถือ -->
-                <a href="index.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-house text-blue-600/70 text-sm mr-1"></i>Home</a>
-                <a href="promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-tag text-blue-600/70 mr-2"></i>โปรโมชั่นทำเว็บ</a>
-                <a href="data-promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-chart-pie text-cyan-600 mr-2"></i>โปรโมชั่น Data</a>
-                <a href="erp-promotion.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-diagram-project text-emerald-600 mr-2"></i>โปรโมชั่น ERP</a>
-                <a href="service.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-layer-group mr-1"></i>บริการอื่นๆ</a>
-                <a href="cms.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-code mr-1"></i>รับพัฒนาเว็บเดิม</a>
-                <a href="WordPress.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-brands fa-wordpress mr-1"></i>รับทำเว็บไซต์ WordPress</a>
-                <a href="wordpress-portfolio.html" class="mobile-nav-link text-blue-600 font-bold py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-images mr-1"></i>Demo WordPress</a>
-                <a href="analytics.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-chart-pie mr-1"></i>Data Analytics &amp; BI</a>
-                <a href="management-systems-demo.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-diagram-project mr-1"></i>ระบบจัดการองค์กร</a>
-                <a href="ai.html" class="mobile-nav-link text-blue-600 font-bold py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-robot mr-1"></i>AI Agent</a>
-                <a href="domain.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-globe text-blue-600/70 text-sm mr-1"></i>ราคา ชื่อเว็บ</a>
-                <a href="category.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-desktop text-blue-600/70 text-sm mr-1"></i>ตัวอย่างเว็บ</a>
-                <a href="about.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base"><i class="fa-solid fa-circle-info text-blue-600/70 text-sm mr-1"></i>เกี่ยวกับเรา</a>
-                <div class="pt-2 text-xs font-bold text-slate-400 uppercase tracking-wider">ระบบจัดการองค์กร</div>
-                <a href="ERP.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">ERP ระบบวางแผนทรัพยากรองค์กร</a>
-                <a href="CRM.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">CRM บริหารความสัมพันธ์ลูกค้า</a>
-                <a href="HRM.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">HRM จัดการบุคลากรและเงินเดือน</a>
-                <a href="CSRM.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">CSRM บริการหลังการขาย</a>
-                <a href="WMS.html" class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base">WMS จัดการคลังสินค้าและสต็อก</a>
-                <a href="#contact" class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4">
-                    <i class="fa-solid fa-comments"></i> ติดต่อเรา
-                </a>
-        </div>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="ERP.html">
+     ERP ระบบวางแผนทรัพยากรองค์กร
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="CRM.html">
+     CRM บริหารความสัมพันธ์ลูกค้า
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="HRM.html">
+     HRM จัดการบุคลากรและเงินเดือน
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="CSRM.html">
+     CSRM บริการหลังการขาย
+    </a>
+    <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="WMS.html">
+     WMS จัดการคลังสินค้าและสต็อก
+    </a>
+    <a class="mobile-nav-link bg-blue-600 text-white text-center px-5 py-3 rounded-xl font-bold text-base hover:bg-blue-700 transition shadow-md shadow-blue-600/20 flex items-center justify-center gap-2 mt-4" href="#contact">
+     <i class="fa-solid fa-comments">
+     </i>
+     ติดต่อเรา
+    </a>
+   </div>
+  </div>
+  <!-- Hero Section: Profile & Experience -->
+  <section class="relative bg-gradient-to-b from-blue-900 to-slate-900 text-white py-24 overflow-hidden">
+   <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&amp;w=1920')] bg-cover bg-center opacity-10">
+   </div>
+   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <span class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider border border-blue-500/30">
+     About Us
+    </span>
+    <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight">
+     ผู้เชี่ยวชาญเบื้องหลังความสำเร็จ
+     <br class="hidden sm:inline"/>
+     <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+      ประสบการณ์ยาวนานกว่า 15 ปี
+     </span>
+    </h1>
+    <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-300 leading-relaxed">
+     เราคือที่ปรึกษาและผู้พัฒนาเทคโนโลยีชั้นนำ มุ่งมั่นขับเคลื่อนธุรกิจให้เติบโตในยุคดิจิทัลด้วยเว็บไซต์มาตรฐานสากล ระบบจัดการข้อมูลอัจฉริยะ และนวัตกรรมปัญญาประดิษฐ์ (AI)
+    </p>
+    <!-- Trusted By / Enterprises -->
+    <div class="mt-16 pt-12 border-t border-slate-800">
+     <p class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-6">
+      ได้รับความไว้วางใจจากองค์กรชั้นนำและธุรกิจมากมาย
+     </p>
+     <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-12 opacity-80">
+      <div class="bg-slate-800/50 px-6 py-3 rounded-xl border border-slate-700 text-lg font-bold tracking-wide text-slate-200">
+       PTT OR
+      </div>
+      <div class="bg-slate-800/50 px-6 py-3 rounded-xl border border-slate-700 text-lg font-bold tracking-wide text-slate-200">
+       UNESCO (องค์กรนานาชาติ)
+      </div>
+      <div class="bg-slate-800/50 px-6 py-3 rounded-xl border border-slate-700 text-sm font-medium tracking-wide text-slate-200 text-center">
+       กรมพัฒนาสังคมและสวัสดิการ
+       <br/>
+       <span class="text-xs text-amber-400">
+        พัฒนาเว็บไซต์ระดับ AAA เพื่อผู้พิการ
+       </span>
+      </div>
+     </div>
     </div>
-
-    <!-- Hero Section: Profile & Experience -->
-    <section class="relative bg-gradient-to-b from-blue-900 to-slate-900 text-white py-24 overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920')] bg-cover bg-center opacity-10"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="bg-blue-500/20 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider border border-blue-500/30">About Us</span>
-            <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight">
-                ผู้เชี่ยวชาญเบื้องหลังความสำเร็จ <br class="hidden sm:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">ประสบการณ์ยาวนานกว่า 15 ปี</span>
-            </h1>
-            <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-300 leading-relaxed">
-                เราคือที่ปรึกษาและผู้พัฒนาเทคโนโลยีชั้นนำ มุ่งมั่นขับเคลื่อนธุรกิจให้เติบโตในยุคดิจิทัลด้วยเว็บไซต์มาตรฐานสากล ระบบจัดการข้อมูลอัจฉริยะ และนวัตกรรมปัญญาประดิษฐ์ (AI)
-            </p>
-            
-            <!-- Trusted By / Enterprises -->
-            <div class="mt-16 pt-12 border-t border-slate-800">
-                <p class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-6">ได้รับความไว้วางใจจากองค์กรชั้นนำและธุรกิจมากมาย</p>
-                <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-12 opacity-80">
-                    <div class="bg-slate-800/50 px-6 py-3 rounded-xl border border-slate-700 text-lg font-bold tracking-wide text-slate-200">PTT OR</div>
-                    <div class="bg-slate-800/50 px-6 py-3 rounded-xl border border-slate-700 text-lg font-bold tracking-wide text-slate-200">UNESCO (องค์กรนานาชาติ)</div>
-                    <div class="bg-slate-800/50 px-6 py-3 rounded-xl border border-slate-700 text-sm font-medium tracking-wide text-slate-200 text-center">
-                         กรมพัฒนาสังคมและสวัสดิการ<br><span class="text-xs text-amber-400">พัฒนาเว็บไซต์ระดับ AAA เพื่อผู้พิการ</span>
-                    </div>
-                </div>
-            </div>
+   </div>
+  </section>
+  <!-- Core Services Section -->
+  <section class="py-20 bg-white">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+     <h2 class="text-3xl font-bold text-slate-900">
+      บริการให้คำปรึกษาและพัฒนาครบวงจร
+     </h2>
+     <p class="mt-4 text-slate-600">
+      ไม่ใช่แค่ทำระบบ แต่เราวางโครงสร้างที่ตอบโจทย์โมเดลธุรกิจของคุณอย่างแท้จริง
+     </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <!-- ERP Consultant -->
+     <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300">
+      <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+       <i class="fa-solid fa-network-wired">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-3">
+       ที่ปรึกษาการวางระบบ ERP
+      </h3>
+      <p class="text-slate-600 text-sm leading-relaxed">
+       เชื่อมโยงทุกกระบวนการทำงานในองค์กร ตั้งแต่บัญชี คลังสินค้า จัดซื้อ และการผลิต ให้ทำงานร่วมกันได้อย่างมีประสิทธิภาพ แม่นยำ และตรวจสอบได้แบบ Real-time
+      </p>
+     </div>
+     <!-- E-commerce Specialist -->
+     <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300">
+      <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+       <i class="fa-solid fa-basket-shopping">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-3">
+       ระบบ E-commerce เต็มรูปแบบ
+      </h3>
+      <p class="text-slate-600 text-sm leading-relaxed">
+       ออกแบบและพัฒนาร้านค้าออนไลน์ที่รองรับการใช้งานหนัก ระบบชำระเงิน ตัดสต็อกอัจฉริยะ และการเชื่อมต่อกับแพลตฟอร์มมาร์เก็ตเพลสชั้นนำเพื่อเพิ่มยอดขาย
+      </p>
+     </div>
+     <!-- SEO No.1 -->
+     <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300">
+      <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
+       <i class="fa-solid fa-arrow-up-right-dots">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold text-slate-900 mb-3">
+       ทำระบบ SEO ดันติดอันดับ 1
+      </h3>
+      <p class="text-slate-600 text-sm leading-relaxed">
+       การันตีผลงานด้วยคีย์เวิร์ดแข่งขันสูงและราคาแพง เช่น
+       <strong class="text-slate-900">
+        "รถมือสอง"
+       </strong>
+       ,
+       <strong class="text-slate-900">
+        "อบรมความปลอดภัยในการทำงาน"
+       </strong>
+       และอื่นๆ สร้าง Traffic คุณภาพเข้าเว็บอย่างยั่งยืน
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- AI Business Transformation Section -->
+  <section class="py-20 bg-slate-900 text-white">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+     <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">
+      AI Solution Deployment
+     </span>
+     <h2 class="text-3xl font-bold mt-2">
+      การพัฒนาธุรกิจขับเคลื่อนด้วย AI (Data &amp; AI Model)
+     </h2>
+     <p class="mt-4 text-slate-400">
+      ยกระดับองค์กรด้วยเทคโนโลยีปัญญาประดิษฐ์เพื่อการวิเคราะห์ จัดการ และพยากรณ์ข้อมูลอย่างแม่นยำ
+     </p>
+    </div>
+    <!-- Grid AI 7 Fields -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <!-- 1. AI BI -->
+     <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
+      <div class="flex items-center gap-3 mb-4">
+       <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">
+        01
+       </span>
+       <h3 class="text-lg font-bold text-white">
+        AI วิเคราะห์ข้อมูล / BI
+       </h3>
+      </div>
+      <p class="text-xs text-slate-400 mb-3">
+       <i class="fa-solid fa-user-check text-blue-400 mr-1">
+       </i>
+       เหมาะกับ: เจ้าของธุรกิจ, ผู้บริหาร, Marketing, Sales
+      </p>
+      <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
+       <li>
+        <strong class="text-white">
+         Power BI:
+        </strong>
+        แดชบอร์ดหา Pattern ยอดขาย, ถามตอบด้วยภาษาคน เช่น
+        <span class="text-blue-300">
+         “ยอดขายเดือนนี้ตกเพราะอะไร”
+        </span>
+       </li>
+       <li>
+        <strong class="text-white">
+         Tableau:
+        </strong>
+        Data Visualization และวิเคราะห์แนวโน้มลูกค้า ระดับองค์กร
+       </li>
+       <li>
+        <strong class="text-white">
+         Looker Studio:
+        </strong>
+        ดึง Data จาก GA4, Ads, Sheets มารายงานผลทันที
+       </li>
+      </ul>
+     </div>
+     <!-- 2. Data Cleaning -->
+     <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
+      <div class="flex items-center gap-3 mb-4">
+       <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">
+        02
+       </span>
+       <h3 class="text-lg font-bold text-white">
+        AI ทำความสะอาดข้อมูล
+       </h3>
+      </div>
+      <p class="text-xs text-slate-400 mb-3">
+       <i class="fa-solid fa-user-check text-blue-400 mr-1">
+       </i>
+       เหมาะกับ: ข้อมูล Excel มหาศาล / CRM / รายชื่อลูกค้า
+      </p>
+      <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
+       <li>
+        <strong class="text-white">
+         OpenRefine:
+        </strong>
+        ลบข้อมูลซ้ำซ้อน จัดการคลีนรูปแบบข้อมูลให้ถูกต้อง
+       </li>
+       <li>
+        <strong class="text-white">
+         Dataiku:
+        </strong>
+        เตรียม Data ทำ Machine Learning (Low-code/No-code)
+       </li>
+       <li>
+        <strong class="text-white">
+         Alteryx:
+        </strong>
+        รวมข้อมูลจากหลายแหล่งทำ Automation Data Workflow
+       </li>
+      </ul>
+     </div>
+     <!-- 3. Auto Reports -->
+     <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
+      <div class="flex items-center gap-3 mb-4">
+       <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">
+        03
+       </span>
+       <h3 class="text-lg font-bold text-white">
+        AI สร้างรายงานอัตโนมัติ
+       </h3>
+      </div>
+      <p class="text-xs text-slate-400 mb-3">
+       <i class="fa-solid fa-user-check text-blue-400 mr-1">
+       </i>
+       เหมาะกับ: รายงานยอดขาย, รายงานผู้บริหาร, สรุป KPI
+      </p>
+      <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
+       <li>
+        <strong class="text-white">
+         ChatGPT:
+        </strong>
+        วิเคราะห์ไฟล์ Excel, หา Insight, สรุปรายงาน, เขียน SQL
+       </li>
+       <li>
+        <strong class="text-white">
+         Claude:
+        </strong>
+        อ่านและวิเคราะห์เอกสารข้อมูลจำนวนมหาศาล สรุปเนื้อหาสำคัญ
+       </li>
+       <li>
+        <strong class="text-white">
+         Gemini:
+        </strong>
+        ทำงานร่วมกับข้อมูลและเครื่องมือใน Google Workspace ไร้รอยต่อ
+       </li>
+      </ul>
+     </div>
+     <!-- 4. Database AI -->
+     <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
+      <div class="flex items-center gap-3 mb-4">
+       <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">
+        04
+       </span>
+       <h3 class="text-lg font-bold text-white">
+        AI สำหรับระบบฐานข้อมูล
+       </h3>
+      </div>
+      <p class="text-xs text-slate-400 mb-3">
+       <i class="fa-solid fa-user-check text-blue-400 mr-1">
+       </i>
+       เหมาะกับ: ธุรกิจที่มีระบบหลังบ้านขนาดใหญ่
+      </p>
+      <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
+       <li>
+        <strong class="text-white">
+         Snowflake:
+        </strong>
+        Data Warehouse บนระบบ AI Data Cloud ยืดหยุ่นสูง
+       </li>
+       <li>
+        <strong class="text-white">
+         Databricks:
+        </strong>
+        จัดการ Big Data และประมวลผล Machine Learning Model
+       </li>
+       <li>
+        <strong class="text-white">
+         Google BigQuery:
+        </strong>
+        วิเคราะห์ข้อมูลขนาดใหญ่ด้วยขุมพลัง SQL + AI
+       </li>
+      </ul>
+     </div>
+     <!-- 5. Marketing Data -->
+     <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
+      <div class="flex items-center gap-3 mb-4">
+       <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">
+        05
+       </span>
+       <h3 class="text-lg font-bold text-white">
+        AI สำหรับ Marketing Data
+       </h3>
+      </div>
+      <p class="text-xs text-slate-400 mb-3">
+       <i class="fa-solid fa-user-check text-blue-400 mr-1">
+       </i>
+       เหมาะกับ: งานด้าน SEO / ยิงโฆษณา Ads / พฤติกรรมเว็บ
+      </p>
+      <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
+       <li>
+        <strong class="text-white">
+         Google Analytics (GA4):
+        </strong>
+        แทร็กพฤติกรรมการใช้งานเชิงลึก
+       </li>
+       <li>
+        <strong class="text-white">
+         HubSpot:
+        </strong>
+        ระบบ CRM ขับเคลื่อนด้วย AI วิเคราะห์คุณภาพของ Lead
+       </li>
+       <li>
+        <strong class="text-white">
+         Salesforce:
+        </strong>
+        Customer Data Platform ใช้ AI ช่วยแนะนำทีมขาย
+       </li>
+      </ul>
+     </div>
+     <!-- 6. Predictive Analytics & 7. Spreadsheets -->
+     <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60 flex flex-col justify-between">
+      <div>
+       <div class="flex items-center gap-3 mb-3">
+        <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">
+         06-07
+        </span>
+        <h3 class="text-lg font-bold text-white">
+         AI ทำนายอนาคต &amp; Excel
+        </h3>
+       </div>
+       <p class="text-xs text-slate-300 mb-2">
+        <strong class="text-white">
+         Predictive (คาดการณ์ยอดขาย/สินค้าขายดี):
+        </strong>
+        ใช้เครื่องมือ DataRobot, H2O.ai, RapidMiner
+       </p>
+      </div>
+      <div class="border-t border-slate-700/60 pt-3 mt-2">
+       <p class="text-xs text-amber-400 font-semibold mb-1">
+        <i class="fa-solid fa-star">
+        </i>
+        แนะนำสำหรับธุรกิจขนาดเล็ก (SME):
+       </p>
+       <p class="text-sm text-slate-300">
+        <strong class="text-white">
+         Excel + Copilot / Sheets + Gemini:
+        </strong>
+        ทำสูตรอัตโนมัติ, หาแนวโน้มยอดขาย และสรุปผลข้อมูลสถิติได้อย่างง่ายดายและประหยัดต้นทุน
+       </p>
+      </div>
+     </div>
+    </div>
+    <!-- SME Recommendation Block -->
+    <div class="mt-16 bg-gradient-to-r from-blue-950 to-slate-900 border border-blue-500/30 rounded-3xl p-8 sm:p-10">
+     <h3 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
+      <i class="fa-solid fa-wand-magic-sparkles text-amber-400">
+      </i>
+      แนวทางการเลือกชุดเครื่องมือ AI ให้เหมาะกับสเกลธุรกิจของคุณ
+     </h3>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+      <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
+       <span class="text-xs font-bold text-blue-400 block mb-1">
+        ธุรกิจเริ่มต้น / ร้านค้าออนไลน์
+       </span>
+       <p class="text-slate-200 font-semibold mb-2">
+        Excel + ChatGPT + Looker Studio + GA4
+       </p>
+       <p class="text-xs text-slate-400">
+        เน้นประหยัด คล่องตัว ดู Marketing Data และเพิ่มอัตราการสั่งซื้อ (Conversion)
+       </p>
+      </div>
+      <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
+       <span class="text-xs font-bold text-emerald-400 block mb-1">
+        ธุรกิจขนาดกลาง / กำลังเติบโต
+       </span>
+       <p class="text-slate-200 font-semibold mb-2">
+        Power BI + ระบบ CRM + BigQuery
+       </p>
+       <p class="text-xs text-slate-400">
+        เน้นความแม่นยำของฐานข้อมูลลูกค้าและ Dashboard วิเคราะห์แบบมืออาชีพ
+       </p>
+      </div>
+      <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
+       <span class="text-xs font-bold text-purple-400 block mb-1">
+        องค์กรขนาดใหญ่ / Enterprise
+       </span>
+       <p class="text-slate-200 font-semibold mb-2">
+        Snowflake + Databricks + AI Model
+       </p>
+       <p class="text-xs text-slate-400">
+        รองรับ Big Data จัดการ Machine Learning Model และโครงสร้างคลาวด์ระดับสูงสุด
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <!-- Contact Section -->
+  <section class="py-24 bg-slate-50" id="contact">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
+     <div>
+      <h2 class="text-3xl font-bold text-slate-900">
+       ติดต่อประเมินราคาฟรี
+      </h2>
+      <p class="mt-4 text-slate-600">
+       พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น
+      </p>
+      <div class="mt-12 space-y-6">
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+         <i class="fa-solid fa-phone">
+         </i>
         </div>
-    </section>
-
-    <!-- Core Services Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-slate-900">บริการให้คำปรึกษาและพัฒนาครบวงจร</h2>
-                <p class="mt-4 text-slate-600">ไม่ใช่แค่ทำระบบ แต่เราวางโครงสร้างที่ตอบโจทย์โมเดลธุรกิจของคุณอย่างแท้จริง</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- ERP Consultant -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-network-wired"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">ที่ปรึกษาการวางระบบ ERP</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        เชื่อมโยงทุกกระบวนการทำงานในองค์กร ตั้งแต่บัญชี คลังสินค้า จัดซื้อ และการผลิต ให้ทำงานร่วมกันได้อย่างมีประสิทธิภาพ แม่นยำ และตรวจสอบได้แบบ Real-time
-                    </p>
-                </div>
-
-                <!-- E-commerce Specialist -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">ระบบ E-commerce เต็มรูปแบบ</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        ออกแบบและพัฒนาร้านค้าออนไลน์ที่รองรับการใช้งานหนัก ระบบชำระเงิน ตัดสต็อกอัจฉริยะ และการเชื่อมต่อกับแพลตฟอร์มมาร์เก็ตเพลสชั้นนำเพื่อเพิ่มยอดขาย
-                    </p>
-                </div>
-
-                <!-- SEO No.1 -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition duration-300">
-                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold mb-6">
-                        <i class="fa-solid fa-arrow-up-right-dots"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">ทำระบบ SEO ดันติดอันดับ 1</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        การันตีผลงานด้วยคีย์เวิร์ดแข่งขันสูงและราคาแพง เช่น <strong class="text-slate-900">"รถมือสอง"</strong>, <strong class="text-slate-900">"อบรมความปลอดภัยในการทำงาน"</strong> และอื่นๆ สร้าง Traffic คุณภาพเข้าเว็บอย่างยั่งยืน
-                    </p>
-                </div>
-            </div>
+        <div>
+         <h4 class="text-sm text-slate-400">
+          เบอร์โทรศัพท์
+         </h4>
+         <p class="text-base font-semibold text-slate-900">
+          063-889-0295
+         </p>
         </div>
-    </section>
-
-    <!-- AI Business Transformation Section -->
-    <section class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">AI Solution Deployment</span>
-                <h2 class="text-3xl font-bold mt-2">การพัฒนาธุรกิจขับเคลื่อนด้วย AI (Data & AI Model)</h2>
-                <p class="mt-4 text-slate-400">ยกระดับองค์กรด้วยเทคโนโลยีปัญญาประดิษฐ์เพื่อการวิเคราะห์ จัดการ และพยากรณ์ข้อมูลอย่างแม่นยำ</p>
-            </div>
-
-            <!-- Grid AI 7 Fields -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- 1. AI BI -->
-                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">01</span>
-                        <h3 class="text-lg font-bold text-white">AI วิเคราะห์ข้อมูล / BI</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-user-check text-blue-400 mr-1"></i> เหมาะกับ: เจ้าของธุรกิจ, ผู้บริหาร, Marketing, Sales</p>
-                    <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
-                        <li><strong class="text-white">Power BI:</strong> แดชบอร์ดหา Pattern ยอดขาย, ถามตอบด้วยภาษาคน เช่น <span class="text-blue-300">“ยอดขายเดือนนี้ตกเพราะอะไร”</span></li>
-                        <li><strong class="text-white">Tableau:</strong> Data Visualization และวิเคราะห์แนวโน้มลูกค้า ระดับองค์กร</li>
-                        <li><strong class="text-white">Looker Studio:</strong> ดึง Data จาก GA4, Ads, Sheets มารายงานผลทันที</li>
-                    </ul>
-                </div>
-
-                <!-- 2. Data Cleaning -->
-                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">02</span>
-                        <h3 class="text-lg font-bold text-white">AI ทำความสะอาดข้อมูล</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-user-check text-blue-400 mr-1"></i> เหมาะกับ: ข้อมูล Excel มหาศาล / CRM / รายชื่อลูกค้า</p>
-                    <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
-                        <li><strong class="text-white">OpenRefine:</strong> ลบข้อมูลซ้ำซ้อน จัดการคลีนรูปแบบข้อมูลให้ถูกต้อง</li>
-                        <li><strong class="text-white">Dataiku:</strong> เตรียม Data ทำ Machine Learning (Low-code/No-code)</li>
-                        <li><strong class="text-white">Alteryx:</strong> รวมข้อมูลจากหลายแหล่งทำ Automation Data Workflow</li>
-                    </ul>
-                </div>
-
-                <!-- 3. Auto Reports -->
-                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">03</span>
-                        <h3 class="text-lg font-bold text-white">AI สร้างรายงานอัตโนมัติ</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-user-check text-blue-400 mr-1"></i> เหมาะกับ: รายงานยอดขาย, รายงานผู้บริหาร, สรุป KPI</p>
-                    <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
-                        <li><strong class="text-white">ChatGPT:</strong> วิเคราะห์ไฟล์ Excel, หา Insight, สรุปรายงาน, เขียน SQL</li>
-                        <li><strong class="text-white">Claude:</strong> อ่านและวิเคราะห์เอกสารข้อมูลจำนวนมหาศาล สรุปเนื้อหาสำคัญ</li>
-                        <li><strong class="text-white">Gemini:</strong> ทำงานร่วมกับข้อมูลและเครื่องมือใน Google Workspace ไร้รอยต่อ</li>
-                    </ul>
-                </div>
-
-                <!-- 4. Database AI -->
-                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">04</span>
-                        <h3 class="text-lg font-bold text-white">AI สำหรับระบบฐานข้อมูล</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-user-check text-blue-400 mr-1"></i> เหมาะกับ: ธุรกิจที่มีระบบหลังบ้านขนาดใหญ่</p>
-                    <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
-                        <li><strong class="text-white">Snowflake:</strong> Data Warehouse บนระบบ AI Data Cloud ยืดหยุ่นสูง</li>
-                        <li><strong class="text-white">Databricks:</strong> จัดการ Big Data และประมวลผล Machine Learning Model</li>
-                        <li><strong class="text-white">Google BigQuery:</strong> วิเคราะห์ข้อมูลขนาดใหญ่ด้วยขุมพลัง SQL + AI</li>
-                    </ul>
-                </div>
-
-                <!-- 5. Marketing Data -->
-                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">05</span>
-                        <h3 class="text-lg font-bold text-white">AI สำหรับ Marketing Data</h3>
-                    </div>
-                    <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-user-check text-blue-400 mr-1"></i> เหมาะกับ: งานด้าน SEO / ยิงโฆษณา Ads / พฤติกรรมเว็บ</p>
-                    <ul class="space-y-2 text-sm text-slate-300 border-t border-slate-700/60 pt-3">
-                        <li><strong class="text-white">Google Analytics (GA4):</strong> แทร็กพฤติกรรมการใช้งานเชิงลึก</li>
-                        <li><strong class="text-white">HubSpot:</strong> ระบบ CRM ขับเคลื่อนด้วย AI วิเคราะห์คุณภาพของ Lead</li>
-                        <li><strong class="text-white">Salesforce:</strong> Customer Data Platform ใช้ AI ช่วยแนะนำทีมขาย</li>
-                    </ul>
-                </div>
-
-                <!-- 6. Predictive Analytics & 7. Spreadsheets -->
-                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700/60 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-xs bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-md font-bold">06-07</span>
-                            <h3 class="text-lg font-bold text-white">AI ทำนายอนาคต & Excel</h3>
-                        </div>
-                        <p class="text-xs text-slate-300 mb-2"><strong class="text-white">Predictive (คาดการณ์ยอดขาย/สินค้าขายดี):</strong> ใช้เครื่องมือ DataRobot, H2O.ai, RapidMiner</p>
-                    </div>
-                    <div class="border-t border-slate-700/60 pt-3 mt-2">
-                        <p class="text-xs text-amber-400 font-semibold mb-1"><i class="fa-solid fa-star"></i> แนะนำสำหรับธุรกิจขนาดเล็ก (SME):</p>
-                        <p class="text-sm text-slate-300">
-                            <strong class="text-white">Excel + Copilot / Sheets + Gemini:</strong> ทำสูตรอัตโนมัติ, หาแนวโน้มยอดขาย และสรุปผลข้อมูลสถิติได้อย่างง่ายดายและประหยัดต้นทุน
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- SME Recommendation Block -->
-            <div class="mt-16 bg-gradient-to-r from-blue-950 to-slate-900 border border-blue-500/30 rounded-3xl p-8 sm:p-10">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2 mb-6">
-                    <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> แนวทางการเลือกชุดเครื่องมือ AI ให้เหมาะกับสเกลธุรกิจของคุณ
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                    <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-                        <span class="text-xs font-bold text-blue-400 block mb-1">ธุรกิจเริ่มต้น / ร้านค้าออนไลน์</span>
-                        <p class="text-slate-200 font-semibold mb-2">Excel + ChatGPT + Looker Studio + GA4</p>
-                        <p class="text-xs text-slate-400">เน้นประหยัด คล่องตัว ดู Marketing Data และเพิ่มอัตราการสั่งซื้อ (Conversion)</p>
-                    </div>
-                    <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-                        <span class="text-xs font-bold text-emerald-400 block mb-1">ธุรกิจขนาดกลาง / กำลังเติบโต</span>
-                        <p class="text-slate-200 font-semibold mb-2">Power BI + ระบบ CRM + BigQuery</p>
-                        <p class="text-xs text-slate-400">เน้นความแม่นยำของฐานข้อมูลลูกค้าและ Dashboard วิเคราะห์แบบมืออาชีพ</p>
-                    </div>
-                    <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
-                        <span class="text-xs font-bold text-purple-400 block mb-1">องค์กรขนาดใหญ่ / Enterprise</span>
-                        <p class="text-slate-200 font-semibold mb-2">Snowflake + Databricks + AI Model</p>
-                        <p class="text-xs text-slate-400">รองรับ Big Data จัดการ Machine Learning Model และโครงสร้างคลาวด์ระดับสูงสุด</p>
-                    </div>
-                </div>
-            </div>
-
+       </div>
+       <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
+         <i class="fa-solid fa-envelope">
+         </i>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-100">
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-900">ติดต่อประเมินราคาฟรี</h2>
-                    <p class="mt-4 text-slate-600">พูดคุยแลกเปลี่ยนไอเดียและรายละเอียดความต้องการได้ตลอดเวลา ไม่มีค่าใช้จ่ายเบื้องต้น</p>
-                    
-                    <div class="mt-12 space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm text-slate-400">เบอร์โทรศัพท์</h4>
-                                <p class="text-base font-semibold text-slate-900">063-889-0295</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm text-slate-400">อีเมลเพื่อติดต่องาน</h4>
-                                <p class="text-base font-semibold text-slate-900">zx1000rr@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                    <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">เลือกช่องทางที่คุณสะดวกคุย</h3>
-                    
-                    <a href="https://line.me/ti/p/~adminkasem" target="_blank" class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition">
-                        <i class="fa-brands fa-line text-xl"></i>
-                        แชทผ่าน Line Official / ID
-                    </a>
-
-                    <a href="mailto:zx1000rr@gmail.com?subject=ติดต่อประเมินราคาเว็บไซต์" class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition">
-                        <i class="fa-solid fa-envelope text-xl"></i>
-                        ส่งอีเมลหาเราโดยตรง
-                    </a>
-
-                    <a href="tel:0638890295" class="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-blue-600/20 transition">
-                        <i class="fa-solid fa-phone text-xl"></i>
-                        โทรคุยตอนนี้ (063-889-0295)
-                    </a>
-                </div>
-            </div>
+        <div>
+         <h4 class="text-sm text-slate-400">
+          อีเมลเพื่อติดต่องาน
+         </h4>
+         <p class="text-base font-semibold text-slate-900">
+          zx1000rr@gmail.com
+         </p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
-                <div class="space-y-4">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-code text-blue-500 text-2xl"></i>
-                        <span class="text-2xl font-bold text-white tracking-wide">prachuap online</span>
-                    </div>
-                    <p class="text-sm leading-relaxed text-slate-400">
-                        บริการรับทำเว็บไซต์ครบวงจร ออกแบบสวยงาม รองรับมือถือ 
-                        และพัฒนาระบบตามความต้องการในราคาที่จับต้องได้
-                    </p>
-                </div>
-                <div>
-                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">เมนูเว็บไซต์</h3>
-                    <div class="grid grid-cols-2 gap-3 text-sm">
-                        <div class="flex flex-col space-y-2.5">
-                            <a href="index.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> Home</a>
-                            <a href="promotion.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> โปรโมชั่น</a>
-                            <a href="service.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> บริการอื่นๆ</a>
-                            <a href="domain.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ราคา ชื่อเว็บ</a>
-                        </div>
-                        <div class="flex flex-col space-y-2.5">
-                            <a href="category.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> ตัวอย่างเว็บ</a>
-                            <a href="management-systems-demo.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> เว็บเดโมระบบจัดการองค์กร</a>                            <a href="cms.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> พัฒนาเว็บเดิม</a>
-                            <a href="about.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> เกี่ยวกับเรา</a>
-                            <a href="ai.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> AI Agent</a>
-                            <a href="WordPress.html" class="hover:text-blue-400 transition duration-200 flex items-center gap-1.5"><i class="fa-solid fa-chevron-right text-[10px] text-slate-600"></i> รับทำเว็บไซต์ WordPress</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-3 text-sm">
-                    <h3 class="text-white font-semibold text-base mb-4 tracking-wider uppercase">ติดต่อเรา</h3>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-phone text-blue-500 w-4"></i> 063-889-0295</p>
-                    <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-blue-500 w-4"></i> zx1000rr@gmail.com</p>
-                </div>
-            </div>
-            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-slate-500">&copy; 2026 prachuap online Studio. All rights reserved.</p>
-                <div class="flex gap-4 text-slate-500 text-lg">
-                    <a href="https://www.facebook.com/profile.php?id=61577335364780" class="hover:text-white transition" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="http://line.me/ti/p/~adminkasem" class="hover:text-white transition" aria-label="Line"><i class="fa-brands fa-line"></i></a>
-                    <a href="https://www.youtube.com" class="hover:text-white transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://discord.com" class="hover:text-white transition" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
-                    <a href="https://www.tiktok.com" class="hover:text-white transition" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript แก้ไขระบบ เปิด-ปิด ให้ทำงานสัมพันธ์กับคลาส hidden -->
-    <script>
-        const menuButton = document.getElementById('mobile-menu-button');
+       </div>
+      </div>
+     </div>
+     <div class="space-y-4 bg-slate-50 rounded-2xl p-6 border border-slate-100">
+      <h3 class="text-lg font-bold text-slate-900 mb-4 text-center sm:text-left">
+       เลือกช่องทางที่คุณสะดวกคุย
+      </h3>
+      <a class="flex items-center justify-center gap-3 w-full bg-[#06C755] hover:bg-[#05b34c] text-white py-4 rounded-xl font-semibold shadow-lg shadow-green-600/20 transition" href="https://line.me/ti/p/~adminkasem" target="_blank">
+       <i class="fa-brands fa-line text-xl">
+       </i>
+       แชทผ่าน Line Official / ID
+      </a>
+      <a class="flex items-center justify-center gap-3 w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold shadow-lg transition" href="mailto:zx1000rr@gmail.com?subject=ติดต่อประเมินราคาเว็บไซต์">
+       <i class="fa-solid fa-envelope text-xl">
+       </i>
+       ส่งอีเมลหาเราโดยตรง
+      </a>
+      <a class="flex items-center justify-center gap-3 w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-semibold shadow-lg shadow-blue-600/20 transition" href="tel:0638890295">
+       <i class="fa-solid fa-phone text-xl">
+       </i>
+       โทรคุยตอนนี้ (063-889-0295)
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+   <div class="flex gap-4 text-slate-500 text-lg">
+    <a aria-label="Facebook" class="hover:text-white transition" href="https://www.facebook.com/profile.php?id=61577335364780">
+     <i class="fa-brands fa-facebook">
+     </i>
+    </a>
+    <a aria-label="Line" class="hover:text-white transition" href="http://line.me/ti/p/~adminkasem">
+     <i class="fa-brands fa-line">
+     </i>
+    </a>
+    <a aria-label="YouTube" class="hover:text-white transition" href="https://www.youtube.com">
+     <i class="fa-brands fa-youtube">
+     </i>
+    </a>
+    <a aria-label="Discord" class="hover:text-white transition" href="https://discord.com">
+     <i class="fa-brands fa-discord">
+     </i>
+    </a>
+    <a aria-label="TikTok" class="hover:text-white transition" href="https://www.tiktok.com">
+     <i class="fa-brands fa-tiktok">
+     </i>
+    </a>
+   </div>
+  </footer>
+  <!-- JavaScript แก้ไขระบบ เปิด-ปิด ให้ทำงานสัมพันธ์กับคลาส hidden -->
+  <script>
+   const menuButton = document.getElementById('mobile-menu-button');
         const closeButton = document.getElementById('mobile-close-button');
         const sidebar = document.getElementById('mobile-sidebar');
         const backdrop = document.getElementById('mobile-backdrop');
@@ -639,7 +963,6 @@
         navLinks.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
-    </script>
-
-</body>
+  </script>
+ </body>
 </html>
