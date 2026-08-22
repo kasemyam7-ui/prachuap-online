@@ -33,16 +33,11 @@
         body {
             background-color: #f8fafc;
         }
-        .article-content h1 { @apply text-3xl font-bold text-slate-900 mb-6; }
-        .article-content h2 { @apply text-2xl font-bold text-slate-800 mt-10 mb-4; }
-        .article-content p { @apply text-lg text-slate-600 leading-relaxed mb-6; }
-        .article-content table { @apply w-full border-collapse my-8; }
-        .article-content th { @apply bg-slate-100 border border-slate-200 p-4 text-left font-bold text-slate-700; }
-        .article-content td { @apply border border-slate-200 p-4 text-slate-600; }
-        .article-content blockquote { @apply border-l-4 border-blue-600 pl-6 py-2 my-8 italic text-xl text-slate-700 bg-blue-50 rounded-r-lg; }
-        .article-content ul { @apply list-disc pl-6 mb-6 text-slate-600 space-y-2; }
+        .category-btn.active {
+            @apply bg-blue-600 text-white shadow-lg shadow-blue-600/20;
+        }
         
-        /* Dropdown Animation (Matches other pages) */
+        /* Dropdown Animation */
         .group:hover .group-hover\:opacity-100 {
             opacity: 1;
             visibility: visible;
@@ -54,10 +49,17 @@
             transform: translateY(10px);
             transition: all 500ms ease-in-out 75ms;
         }
+
+        .article-card {
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
   </style>
  </head>
  <body class="font-sans text-slate-900">
-  <!-- Top Navigation (Standardized) -->
+  <!-- Top Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
@@ -140,7 +142,7 @@
    </div>
   </nav>
 
-  <!-- Mobile Sidebar (Standardized) -->
+  <!-- Mobile Sidebar -->
   <div class="fixed inset-0 z-[100] hidden pointer-events-none" id="mobile-sidebar">
    <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-400" id="mobile-backdrop"></div>
    <div class="absolute right-0 top-0 bottom-0 w-[280px] bg-white shadow-2xl translate-x-full transition-transform duration-400 ease-out p-6 flex flex-col" id="mobile-menu-panel">
@@ -157,116 +159,150 @@
      <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="analytics.html">Data Analytics & BI</a>
      <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="management-systems-demo.html">ระบบจัดการองค์กร</a>
      <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="promotion.html">โปรโมชั่น</a>
-     <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="ai.html">
-      <i class="fa-solid fa-microchip mr-1"></i>
-      AI Agent
-     </a>
-     <a class="mobile-nav-link text-blue-600 font-bold py-2 border-b border-slate-100 text-base" href="news.html">
-      <i class="fa-solid fa-newspaper mr-1"></i>
-      News
-     </a>
+     <a class="mobile-nav-link text-slate-700 hover:text-blue-600 font-medium py-2 border-b border-slate-100 text-base" href="ai.html">AI Agent</a>
+     <a class="mobile-nav-link text-blue-600 font-bold py-2 border-b border-slate-100 text-base" href="news.html">News</a>
     </div>
-    <a class="mt-8 bg-blue-600 text-white py-4 rounded-xl font-bold text-center shadow-lg shadow-blue-600/20" href="#contact">ติดต่อรับบริการ</a>
    </div>
   </div>
 
   <!-- News Hero Section -->
   <section class="pt-32 pb-12 bg-gradient-to-b from-blue-50 to-white">
-   <div class="max-w-4xl mx-auto px-4 text-center">
-    <span class="inline-block px-4 py-1.5 bg-blue-100 text-blue-600 rounded-full text-sm font-bold mb-4">
-     LATEST NEWS & ARTICLES
+   <div class="max-w-7xl mx-auto px-4 text-center">
+    <span class="inline-block px-4 py-1.5 bg-blue-100 text-blue-600 rounded-full text-sm font-bold mb-4 uppercase tracking-wider">
+     News & Articles
     </span>
     <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-     ข่าวสารและบทความเทคโนโลยี
+     อัปเดตข่าวสารและบทความ
     </h1>
-    <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-     อัปเดตเทรนด์ AI, การพัฒนาเว็บไซต์ และโซลูชันเพื่อยกระดับธุรกิจ SME ไทยให้ก้าวไกลกว่าเดิม
+    <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-12">
+     รวมเทรนด์เทคโนโลยี เคล็ดลับการทำธุรกิจ และข่าวสารที่น่าสนใจในจังหวัดประจวบคีรีขันธ์
     </p>
+
+    <!-- Category Filter -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8" id="category-filters">
+     <button class="category-btn active px-6 py-2.5 rounded-xl font-bold text-sm transition border border-slate-200 hover:border-blue-600 bg-white" data-category="all">ทั้งหมด</button>
+     <button class="category-btn px-6 py-2.5 rounded-xl font-bold text-sm transition border border-slate-200 hover:border-blue-600 bg-white" data-category="wordpress">WordPress</button>
+     <button class="category-btn px-6 py-2.5 rounded-xl font-bold text-sm transition border border-slate-200 hover:border-blue-600 bg-white" data-category="erp">ERP & Systems</button>
+     <button class="category-btn px-6 py-2.5 rounded-xl font-bold text-sm transition border border-slate-200 hover:border-blue-600 bg-white" data-category="website">Web Development</button>
+     <button class="category-btn px-6 py-2.5 rounded-xl font-bold text-sm transition border border-slate-200 hover:border-blue-600 bg-white" data-category="facebook">Facebook & Social</button>
+     <button class="category-btn px-6 py-2.5 rounded-xl font-bold text-sm transition border border-slate-200 hover:border-blue-600 bg-white" data-category="local">ข่าวท้องที่ประจวบ</button>
+    </div>
    </div>
   </section>
 
-  <!-- Main Article Section -->
-  <section class="py-12">
-   <div class="max-w-4xl mx-auto px-4">
-    <!-- Featured Article -->
-    <article class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100">
-     <div class="p-8 md:p-12">
-      <div class="flex items-center gap-4 mb-8 text-sm text-slate-400">
-       <span class="flex items-center gap-1.5"><i class="fa-solid fa-calendar"></i> 23 สิงหาคม 2569</span>
-       <span class="flex items-center gap-1.5"><i class="fa-solid fa-user"></i> โดย Prachuap Online Team</span>
-       <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg font-medium">AI & Technology</span>
+  <!-- News Grid Section -->
+  <section class="py-12 min-h-[600px]">
+   <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="news-grid">
+     
+     <!-- Article 1: AI (General/Website) -->
+     <article class="article-card bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 flex flex-col" data-category="website">
+      <div class="h-48 bg-blue-600 flex items-center justify-center text-white text-5xl">
+       <i class="fa-solid fa-microchip"></i>
       </div>
-
-      <div class="article-content">
-       <h1>ปฏิวัติธุรกิจ SME ไทยด้วย AI Agent: อนาคตของการทำงานที่ชาญฉลาดกว่าเดิม</h1>
-       
-       <p>ในยุคดิจิทัลที่การแข่งขันสูงขึ้นอย่างรวดเร็ว <strong>AI Agent</strong> หรือระบบปัญญาประดิษฐ์อัจฉริยะไม่ได้เป็นเพียงแค่เรื่องของบริษัทเทคโนโลยียักษ์ใหญ่รายวันอีกต่อไป แต่กำลังกลายเป็นเครื่องมือสำคัญที่ช่วยให้ธุรกิจ SME ในประเทศไทยสามารถยกระดับประสิทธิภาพการทำงาน ลดต้นทุน และสร้างความได้เปรียบทางการแข่งขันได้อย่างมหาศาล</p>
-
-       <h2>ทำไม AI Agent ถึงสำคัญต่อธุรกิจของคุณ?</h2>
-       <p>การนำ AI มาใช้ในธุรกิจไม่ใช่แค่การติดตั้งซอฟต์แวร์ทั่วไป แต่คือการสร้าง "พนักงานอัจฉริยะ" ที่สามารถทำงานซ้ำๆ ได้อย่างแม่นยำตลอด 24 ชั่วโมง โดยไม่มีความเหนื่อยล้า นี่คือประโยชน์หลักที่คุณจะได้รับ:</p>
-
-       <table>
-        <thead>
-         <tr>
-          <th>ประโยชน์ของ AI Agent</th>
-          <th>รายละเอียดการยกระดับธุรกิจ</th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-          <td><strong>การบริการลูกค้า 24/7</strong></td>
-          <td>ตอบคำถามลูกค้าผ่าน Line, Facebook และหน้าเว็บได้ทันทีโดยไม่ต้องรอแอดมิน</td>
-         </tr>
-         <tr>
-          <td><strong>การวิเคราะห์ข้อมูลแม่นยำ</strong></td>
-          <td>เปลี่ยนข้อมูลการขายที่ซับซ้อนให้กลายเป็นกราฟและบทวิเคราะห์ที่เข้าใจง่ายเพื่อการตัดสินใจ</td>
-         </tr>
-         <tr>
-          <td><strong>การลดข้อผิดพลาด</strong></td>
-          <td>ระบบอัตโนมัติช่วยลด Human Error ในงานเอกสาร การคีย์ข้อมูล และการคำนวณ</td>
-         </tr>
-         <tr>
-          <td><strong>การเพิ่มรายได้</strong></td>
-          <td>AI สามารถแนะนำสินค้าที่ตรงใจลูกค้า (Personalization) ช่วยเพิ่มโอกาสการปิดการขาย</td>
-         </tr>
-        </tbody>
-       </table>
-
-       <h2>บริการ AI Solution จาก Prachuap Online</h2>
-       <p>ที่ <strong>Prachuap Online</strong> เราเข้าใจความต้องการของธุรกิจท้องถิ่นและ SME เราจึงออกแบบโซลูชัน AI ที่ใช้งานง่ายและเห็นผลจริง:</p>
-       <ul>
-        <li><strong>AI Customer Service:</strong> ระบบตอบโต้อัตโนมัติที่ฉลาดกว่า Chatbot ทั่วไป เข้าใจบริบทและภาษาธรรมชาติ</li>
-        <li><strong>Data Analytics & BI:</strong> เปลี่ยนข้อมูลในมือคุณให้เป็นขุมทรัพย์ด้วยการวิเคราะห์เชิงทำนาย (Predictive Analytics)</li>
-        <li><strong>Automation Workflow:</strong> เชื่อมต่อระบบหลังบ้านของคุณให้ทำงานร่วมกันโดยอัตโนมัติ ลดขั้นตอนการทำงานที่ซ้ำซ้อน</li>
-       </ul>
-
-       <blockquote>"ในโลกที่เทคโนโลยีเปลี่ยนไปทุกวินาที ผู้ที่เริ่มก่อนคือผู้ที่ได้เปรียบที่สุด"</blockquote>
-
-       <p>การเริ่มต้นนำ AI มาใช้ในวันนี้ คือการวางรากฐานที่มั่นคงสำหรับวันพรุ่งนี้ ไม่ว่าคุณจะทำธุรกิจร้านอาหาร โรงแรม หรือบริการด้านไอที AI Agent สามารถปรับเปลี่ยนให้เข้ากับความต้องการเฉพาะตัวของธุรกิจคุณได้เสมอ</p>
-
-       <p><strong>สนใจยกระดับธุรกิจของคุณด้วย AI?</strong> ติดต่อทีมงาน Prachuap Online เพื่อรับคำปรึกษาฟรีได้ที่หน้า <a href="ai.html" class="text-blue-600 hover:underline font-bold">บริการ AI Agent</a> ของเราครับ</p>
-      </div>
-
-      <!-- Article Share -->
-      <div class="mt-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6">
-       <div class="flex items-center gap-3">
-        <span class="text-sm font-bold text-slate-400 uppercase tracking-wider">แชร์บทความนี้:</span>
-        <div class="flex gap-2">
-         <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-         <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-[#06C755] hover:text-white transition"><i class="fa-brands fa-line"></i></a>
-         <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-slate-900 hover:text-white transition"><i class="fa-solid fa-link"></i></a>
-        </div>
+      <div class="p-6 flex-grow">
+       <div class="flex items-center gap-2 mb-4">
+        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-lg uppercase">Web Development</span>
+        <span class="text-xs text-slate-400">23 ส.ค. 2569</span>
        </div>
-       <a href="index.html" class="text-slate-600 hover:text-blue-600 font-bold flex items-center gap-2 transition">
-        <i class="fa-solid fa-arrow-left"></i> กลับหน้าหลัก
-       </a>
+       <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">ปฏิวัติธุรกิจ SME ไทยด้วย AI Agent: อนาคตของการทำงาน</h3>
+       <p class="text-slate-600 text-sm mb-6 line-clamp-3">การนำ AI มาใช้ในธุรกิจไม่ใช่แค่การติดตั้งซอฟต์แวร์ทั่วไป แต่คือการสร้าง "พนักงานอัจฉริยะ" ที่ทำงานได้ตลอด 24 ชั่วโมง...</p>
+       <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">อ่านเพิ่มเติม <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-     </div>
-    </article>
+     </article>
+
+     <!-- Article 2: WordPress -->
+     <article class="article-card bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 flex flex-col" data-category="wordpress">
+      <div class="h-48 bg-[#21759b] flex items-center justify-center text-white text-5xl">
+       <i class="fa-brands fa-wordpress"></i>
+      </div>
+      <div class="p-6 flex-grow">
+       <div class="flex items-center gap-2 mb-4">
+        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-lg uppercase">WordPress</span>
+        <span class="text-xs text-slate-400">22 ส.ค. 2569</span>
+       </div>
+       <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">5 ปลั๊กอิน WordPress ที่ช่วยเพิ่มยอดขายให้ร้านค้าออนไลน์ของคุณ</h3>
+       <p class="text-slate-600 text-sm mb-6 line-clamp-3">การเลือกปลั๊กอินที่ถูกต้องช่วยให้เว็บไซต์โหลดเร็วขึ้นและปิดการขายได้ง่ายขึ้น มาดูกันว่ามีตัวไหนบ้างที่ขาดไม่ได้...</p>
+       <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">อ่านเพิ่มเติม <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+     </article>
+
+     <!-- Article 3: ERP -->
+     <article class="article-card bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 flex flex-col" data-category="erp">
+      <div class="h-48 bg-slate-800 flex items-center justify-center text-white text-5xl">
+       <i class="fa-solid fa-server"></i>
+      </div>
+      <div class="p-6 flex-grow">
+       <div class="flex items-center gap-2 mb-4">
+        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-lg uppercase">ERP & Systems</span>
+        <span class="text-xs text-slate-400">21 ส.ค. 2569</span>
+       </div>
+       <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">จัดการสต๊อกสินค้าให้แม่นยำ 100% ด้วยระบบ WMS อัจฉริยะ</h3>
+       <p class="text-slate-600 text-sm mb-6 line-clamp-3">เบื่อไหมกับปัญหาสต๊อกไม่ตรง? เรียนรู้วิธีการนำระบบ Warehouse Management มาใช้เพื่อลดความผิดพลาดและเพิ่มกำไร...</p>
+       <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">อ่านเพิ่มเติม <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+     </article>
+
+     <!-- Article 4: Facebook -->
+     <article class="article-card bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 flex flex-col" data-category="facebook">
+      <div class="h-48 bg-[#1877f2] flex items-center justify-center text-white text-5xl">
+       <i class="fa-brands fa-facebook"></i>
+      </div>
+      <div class="p-6 flex-grow">
+       <div class="flex items-center gap-2 mb-4">
+        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-lg uppercase">Social Media</span>
+        <span class="text-xs text-slate-400">20 ส.ค. 2569</span>
+       </div>
+       <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">เทคนิคการยิงโฆษณา Facebook ให้ตรงกลุ่มเป้าหมายในปี 2026</h3>
+       <p class="text-slate-600 text-sm mb-6 line-clamp-3">อัลกอริทึมเปลี่ยนไป เราก็ต้องเปลี่ยนตาม มาดูวิธีการเซ็ตกลุ่มเป้าหมายแบบใหม่ที่ช่วยประหยัดค่าโฆษณาได้มากขึ้น...</p>
+       <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">อ่านเพิ่มเติม <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+     </article>
+
+     <!-- Article 5: Local News -->
+     <article class="article-card bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 flex flex-col" data-category="local">
+      <div class="h-48 bg-orange-500 flex items-center justify-center text-white text-5xl">
+       <i class="fa-solid fa-map-location-dot"></i>
+      </div>
+      <div class="p-6 flex-grow">
+       <div class="flex items-center gap-2 mb-4">
+        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-lg uppercase">ข่าวท้องที่ประจวบ</span>
+        <span class="text-xs text-slate-400">19 ส.ค. 2569</span>
+       </div>
+       <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">ประจวบคีรีขันธ์เตรียมจัดงาน Smart City Expo ดึงเทคโนโลยีพัฒนาเมือง</h3>
+       <p class="text-slate-600 text-sm mb-6 line-clamp-3">ก้าวสำคัญของจังหวัดประจวบฯ ในการนำเทคโนโลยีมาใช้พัฒนาคุณภาพชีวิตและส่งเสริมการท่องเที่ยวอย่างยั่งยืน...</p>
+       <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">อ่านเพิ่มเติม <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+     </article>
+
+     <!-- Article 6: Website -->
+     <article class="article-card bg-white rounded-3xl shadow-xl shadow-slate-200/50 overflow-hidden border border-slate-100 flex flex-col" data-category="website">
+      <div class="h-48 bg-emerald-500 flex items-center justify-center text-white text-5xl">
+       <i class="fa-solid fa-bolt"></i>
+      </div>
+      <div class="p-6 flex-grow">
+       <div class="flex items-center gap-2 mb-4">
+        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded-lg uppercase">Web Development</span>
+        <span class="text-xs text-slate-400">18 ส.ค. 2569</span>
+       </div>
+       <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug">ทำไมความเร็วของเว็บไซต์ถึงมีผลต่อยอดขายมากกว่าที่คุณคิด</h3>
+       <p class="text-slate-600 text-sm mb-6 line-clamp-3">ทุกวินาทีที่ลูกค้าต้องรอคือโอกาสที่เสียไป เรียนรู้วิธีการปรับแต่งเว็บไซต์ให้โหลดเร็วทันใจในพริบตา...</p>
+       <a href="#" class="text-blue-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">อ่านเพิ่มเติม <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+     </article>
+
+    </div>
+    
+    <!-- No Results Message -->
+    <div id="no-results" class="hidden text-center py-20">
+        <i class="fa-solid fa-magnifying-glass text-slate-200 text-6xl mb-4"></i>
+        <h3 class="text-xl font-bold text-slate-900">ไม่พบบทความในหมวดหมู่นี้</h3>
+        <p class="text-slate-500">กรุณาลองเลือกหมวดหมู่ใหม่อีกครั้ง</p>
+    </div>
    </div>
   </section>
 
-  <!-- Footer (Standardized) -->
+  <!-- Footer -->
   <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -326,6 +362,7 @@
   </footer>
 
   <script>
+   // Mobile Menu Logic
    const menuButton = document.getElementById('mobile-menu-button');
    const closeButton = document.getElementById('mobile-close-button');
    const sidebar = document.getElementById('mobile-sidebar');
@@ -353,6 +390,38 @@
    menuButton.addEventListener('click', openMenu);
    closeButton.addEventListener('click', closeMenu);
    backdrop.addEventListener('click', closeMenu);
+
+   // Category Filtering Logic
+   const filterButtons = document.querySelectorAll('.category-btn');
+   const articleCards = document.querySelectorAll('.article-card');
+   const noResults = document.getElementById('no-results');
+
+   filterButtons.forEach(button => {
+       button.addEventListener('click', () => {
+           // Update active state
+           filterButtons.forEach(btn => btn.classList.remove('active'));
+           button.classList.add('active');
+
+           const category = button.getAttribute('data-category');
+           let hasVisible = false;
+
+           articleCards.forEach(card => {
+               if (category === 'all' || card.getAttribute('data-category') === category) {
+                   card.style.display = 'flex';
+                   hasVisible = true;
+               } else {
+                   card.style.display = 'none';
+               }
+           });
+
+           // Show/Hide no results message
+           if (hasVisible) {
+               noResults.classList.add('hidden');
+           } else {
+               noResults.classList.remove('hidden');
+           }
+       });
+   });
   </script>
  </body>
 </html>
